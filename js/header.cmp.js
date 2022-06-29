@@ -1,8 +1,8 @@
 export default {
     template: `
- <section class="email-header">
+ <header>
  <p >header</p>
- </section>
+ </header>
 `,
     data() {
         return {};

@@ -1,3 +1,4 @@
-.email-sidebar{
-    background-color: pink;
+.email-side{
+    background-color: lightgreen;
+    flex-grow: 1;
 }

@@ -1,3 +1,4 @@
 .email-list{
-    background-color: pink;
+    background-color: lightcyan;
+    flex-grow: 15;
 }

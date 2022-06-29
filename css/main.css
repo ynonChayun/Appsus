@@ -1,3 +1,8 @@
+/* MAIN */
+@import './main-page.css';
+/* EMAIL */
+/* CMPS */
 @import './apps/email/cmps/email-header.css';
 @import './apps/email/cmps/email-side.css';
 @import './apps/email/cmps/email-list.css';
+@import './apps/email/cmps/email-app.css';

@@ -1,13 +1,20 @@
 import  {router}  from './router.js'
+import mainHeader from './header.cmp.js'
 
 const options = {
     template: `
-    <router-view />
+    <section class="main-page">
+    <main-header />
+    <router-view class="main-component"/>
+    </section>
 `,
     data() {
         return {};
     },
     created() { },
+    components :{
+        mainHeader
+    },
     methods: {},
     computed: {},
     unmounted() { },

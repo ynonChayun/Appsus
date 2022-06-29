@@ -1,24 +1,25 @@
 import emailList from '../cmps/email-list.cmp.js'
-import EmailHeader from '../cmps/header.cmp.js'
-import emailSide from '../cmps/email-sidebar.cmp.js'
+import emailSide from '../cmps/email-side.cmp.js'
 
+import { emailService } from "../services/email.servics.js"
 
 export default {
     template: `
-
-    <Email-header />
+    <section class="email-app">
     <email-side />
     <email-list />
+    </section>
 `,
     data() {
         return {};
     },
     methods: {},
     components: {
-        EmailHeader,
         emailSide,
         emailList,
     },
-    created() { },
+    created() {
+        emailService._createEmails()
+     },
     unmounted() { },
 };
