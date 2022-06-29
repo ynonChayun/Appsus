@@ -6,7 +6,7 @@ export default {
     template: `
     <section class="note-app">
         <note-create></note-create>
-        <note-list/>
+        <note-list :notes="notes"/>
     </section>
 `,
     data() {

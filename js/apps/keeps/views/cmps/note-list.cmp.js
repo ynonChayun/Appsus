@@ -1,6 +1,10 @@
 export default {
+    props: ['notes'],
     template: `
-    note list
+    <div v-for="note in notes">
+        <p>{{note.info.title}}</p>
+        <p>{{note.info.txt}}</p>
+    </div>
 `,
     data() {
         return {};

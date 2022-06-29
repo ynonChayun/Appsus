@@ -3,7 +3,6 @@ import { storageService } from './note-storage.js'
 
 export const noteService = {
     getNotes,
-
 }
 
 const NOTE_KEY = 'notesDB'
@@ -12,11 +11,6 @@ const gNotes = utilsService.loadFromStorage(NOTE_KEY) || _createExampleNotes()
 function getNotes() {
     return storageService.query(NOTE_KEY)
 }
-
-
-
-
-
 
 function _createExampleNotes() {
     const notes = [{
@@ -36,8 +30,8 @@ function _createExampleNotes() {
             type: 'txt',
             isPinned: false,
             info: {
-                title: 'First Note',
-                txt: 'Hi everyone!'
+                title: 'Second Note',
+                txt: 'By everyone!'
             },
             style: {
                 backgroundColor: '#FFFFFF',
@@ -48,8 +42,8 @@ function _createExampleNotes() {
             type: 'txt',
             isPinned: false,
             info: {
-                title: 'First Note',
-                txt: 'Hi everyone!'
+                title: 'Third Note',
+                txt: 'Hi again!'
             },
             style: {
                 backgroundColor: '#FFFFFF',
