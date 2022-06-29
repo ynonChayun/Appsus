@@ -19,3 +19,5 @@
 @import './apps/keep/keep-app.css';
 @import './apps/keep/keep-list.css';
 @import './apps/keep/keep-preview.css';
+@import './apps/keep/keep-preview-cmp.css';
+@import './apps/keep/keep-add.css';

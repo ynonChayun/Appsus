@@ -1,0 +1,29 @@
+.keep-template {
+    min-height: 5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    word-wrap: break-word;
+    text-align: center;
+}
+
+.note-img {
+    margin: 0 auto;
+}
+
+.title-txt {
+    font-size: 1.3em;
+}
+
+.todos-ul {
+    list-style-type: none
+}
+
+.todo-li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2em;
+    padding: 0 5px;
+    cursor: pointer;
+}

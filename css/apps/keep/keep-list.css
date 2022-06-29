@@ -2,3 +2,21 @@
     column-count: 4;
     width: 95vw;
 }
+
+@media (max-width: 1080px) {
+    .keep-list {
+        column-count: 3;
+    }
+}
+
+@media (max-width: 850px) {
+    .keep-list {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 500px) {
+    .keep-list {
+        column-count: 1;
+    }
+}

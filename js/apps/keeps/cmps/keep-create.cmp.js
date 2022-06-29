@@ -2,28 +2,27 @@ import { keepService } from '../service/keep-service.js'
 
 export default {
     template: `
-    <section class="keep-create">
-        <div class="keep-create-container">
-            <div @keyup.enter="createNote">
-                <input class="txt-input" 
-                placeholder="Title"
-                v-model="titleValue"
-                >
-                 <input class="txt-input" 
-                :placeholder="placeholderTxt"
-                v-model="txtValue"
-                >
+    <section>
+        <div class="note-add">
+            <div class="note-content-inputs"  @keyup.enter="createNote" >
+                 <input class="txt-input" placeholder="Title" v-model="titleValue">
+                 <input class="txt-input" :placeholder="placeholderTxt"v-model="txtValue">
             </div>
-            <div>
-                <button @click="changeType('noteText')">
-                     <i class="far fa-comment"></i>
-                </button>
-                <button @click="changeType('noteImg')">
-                     <i class="far fa-image"></i>
-                </button>
-                <button @click="changeType('noteTodos')">
-                    <i class="fas fa-list-ul"></i>
-                </button>    
+            <div class="note-type-btns">
+                <div class="type-btn">
+                    <button class="change-btn" @click="changeType('noteText')">
+                        <i class="far fa-comment"></i>
+                    </button>
+                    <button class="change-btn" @click="changeType('noteImg')">
+                        <i class="far fa-image"></i>
+                    </button>
+                    <button class="change-btn" @click="changeType('noteTodos')">
+                        <i class="fas fa-list-ul"></i>
+                    </button>    
+                </div>
+                <div>
+                    <button @click="createNote">Add note</button>
+                </div>
             </div>
         </div>
     </section>

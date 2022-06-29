@@ -58,7 +58,7 @@ function _createExampleNotes() {
                 txt: 'Hi everyone!'
             },
             style: {
-                backgroundColor: '#FFFFFF',
+                backgroundColor: '#b32850',
             }
         },
         {
@@ -68,10 +68,10 @@ function _createExampleNotes() {
             isPinned: false,
             info: {
                 title: 'Third Note',
-                img: 'https://images.unsplash.com/photo-1656380605767-28a92b240053?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=386&q=80'
+                img: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
             },
             style: {
-                backgroundColor: '#FFFFFF',
+                backgroundColor: '#3b8beb',
             }
         },
         {
@@ -88,7 +88,7 @@ function _createExampleNotes() {
                 ]
             },
             style: {
-                backgroundColor: '#aaffee'
+                backgroundColor: '#e7e3d4'
             }
         },
         {
@@ -98,10 +98,36 @@ function _createExampleNotes() {
             isPinned: false,
             info: {
                 title: 'Third Note',
-                img: 'https://images.unsplash.com/photo-1656380605767-28a92b240053?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=386&q=80'
+                img: 'https://images.unsplash.com/photo-1626025437642-0b05076ca301?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=534&q=80'
             },
             style: {
-                backgroundColor: '#FFFFFF',
+                backgroundColor: '#c4dbf6',
+            }
+        },
+        {
+            id: utilsService.makeId(),
+            type: 'noteImg',
+            noteType: 'txt',
+            isPinned: false,
+            info: {
+                title: 'Third Note',
+                img: 'https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+            },
+            style: {
+                backgroundColor: '#41b3a3',
+            }
+        },
+        {
+            id: utilsService.makeId(),
+            type: 'noteImg',
+            noteType: 'txt',
+            isPinned: false,
+            info: {
+                title: 'Third Note',
+                img: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
+            },
+            style: {
+                backgroundColor: '#b32850',
             }
         },
         {
@@ -118,7 +144,7 @@ function _createExampleNotes() {
                 ]
             },
             style: {
-                backgroundColor: '#aaffee'
+                backgroundColor: '#3bbeb'
             }
         },
         {
@@ -128,27 +154,23 @@ function _createExampleNotes() {
             isPinned: false,
             info: {
                 title: 'Third Note',
-                img: 'https://images.unsplash.com/photo-1656380605767-28a92b240053?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=386&q=80'
+                img: 'https://images.unsplash.com/photo-1626025437642-0b05076ca301?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=534&q=80'
             },
             style: {
-                backgroundColor: '#FFFFFF',
+                backgroundColor: '#8590aa',
             }
         },
         {
             id: utilsService.makeId(),
-            type: 'noteTodos',
-            noteType: 'todos',
+            type: 'noteImg',
+            noteType: 'txt',
             isPinned: false,
             info: {
-                title: 'groceries:',
-                todos: [
-                    { txt: 'milk', isComplete: true, doneAt: null },
-                    { txt: 'toothpaste', isComplete: false, doneAt: 187111111 },
-                    { txt: 'bamba', isComplete: false, doneAt: 187111 }
-                ]
+                title: 'Third Note',
+                img: 'https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
             },
             style: {
-                backgroundColor: '#aaffee'
+                backgroundColor: '#c4dbf6',
             }
         },
 

@@ -2,12 +2,13 @@ import { eventBus } from "../../../services/eventBus-service.js";
 export default {
     props: ['note'],
     template: `
-    <section >
-        <h4>{{note.info.title}}</h4>
-        <ul v-if="note.info.todos">
+    <section class="keep-template">
+        <h4 class="title-txt">{{note.info.title}}</h4>
+        <ul v-if="note.info.todos" class="todos-ul">
             <li v-for="(todo, idx) in note.info.todos"
             :class=" {'todo-complete' : todo.isComplete, 'todo-uncomplete' : !todo.isComplete}"
-            @click="toggleTodoComplete(idx)">
+            @click="toggleTodoComplete(idx)"
+            class="todo-li">
                 {{todo.txt}}
                 <button @click.stop="removeTodo(idx)"
                 class="todo-remove-btn">
