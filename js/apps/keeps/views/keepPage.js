@@ -6,7 +6,7 @@ import { keepService } from '../service/keep-service.js'
 export default {
     template: `
     <section class="keep-app">
-        <keep-create class="container"/>
+        <keep-create class="container" @noteAdded="addNote"/>
         <keep-list class="container" :notes="notes"/>
     </section>
 `,
@@ -21,10 +21,18 @@ export default {
     },
     created() {
         keepService.getNotes().then((notes) => {
+            console.log('notes: ', notes)
             this.notes = notes
         })
     },
-    methods: {},
+    methods: {
+        addNote() {
+            keepService.getNotes().then((notes) => {
+                console.log('notes: ', notes)
+                this.notes = notes
+            })
+        }
+    },
     computed: {},
     unmounted() {},
 };

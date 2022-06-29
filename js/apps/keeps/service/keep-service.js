@@ -3,6 +3,7 @@ import { storageService } from './note-storage.js'
 
 export const keepService = {
     getNotes,
+    createNote
 }
 
 const NOTE_KEY = 'notesDB'
@@ -10,6 +11,28 @@ const gNotes = utilsService.loadFromStorage(NOTE_KEY) || _createExampleNotes()
 
 function getNotes() {
     return storageService.query(NOTE_KEY)
+}
+
+function createNote(noteInfo) {
+    const note = {
+        id: utilsService.makeId(),
+        type: noteInfo.type,
+        noteType: noteInfo.noteType,
+        isPinned: noteInfo.isPinned,
+        info: {
+            title: noteInfo.info.title,
+            txt: noteInfo.info.txt,
+            img: noteInfo.info.img,
+            video: noteInfo.info.video,
+            todos: noteInfo.info.todos,
+        },
+        style: {
+            backgroundColor: '#FFFFFF',
+        }
+    }
+    gNotes.unshift(note)
+    utilsService.saveToStorage(NOTE_KEY, gNotes)
+    return Promise.resolve()
 }
 
 function _createExampleNotes() {

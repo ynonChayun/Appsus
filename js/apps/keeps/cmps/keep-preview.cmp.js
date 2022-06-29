@@ -6,8 +6,8 @@ import noteTodos from './keep-preview-todos.cmp.js'
 export default {
     props: ['note'],
     template: `
-                <section class="keep-preview">
-                    <div class="keep-type-container" :style="{ backgroundColor: noteBgColor }">
+                <section class="keep-preview" :style="{ backgroundColor: noteBgColor }">
+                    <div class="keep-type-container" >
                         <component :is="note.type"
                             :class="note.type"
                             :note="note">
