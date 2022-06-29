@@ -1,6 +1,6 @@
 import homePage from './home-page.cmp.js'
 import keepPage from './apps/keeps/views/keepPage.js'
-import mailPage from './apps/email/views/mailPage.js'
+import mailPage from './apps/email/views/email-app.cmp.js'
 
 const routes = [
     {
