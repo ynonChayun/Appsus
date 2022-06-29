@@ -1,12 +1,29 @@
+import noteCreate from './cmps/note-create.cmp.js'
+import noteList from './cmps/note-list.cmp.js'
+import { noteService } from './service/note-service.js'
+
 export default {
     template: `
-    <p>hi from keep</p>
+    <section class="note-app">
+        <note-create></note-create>
+        <note-list/>
+    </section>
 `,
     data() {
-        return {};
+        return {
+            notes: null,
+        };
     },
-    created() { },
+    components: {
+        noteList,
+        noteCreate,
+    },
+    created() {
+        noteService.getNotes().then((notes) => {
+            this.notes = notes
+        })
+    },
     methods: {},
     computed: {},
-    unmounted() { },
+    unmounted() {},
 };
