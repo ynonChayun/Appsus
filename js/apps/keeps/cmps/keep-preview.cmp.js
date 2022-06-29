@@ -1,4 +1,5 @@
 import { noteText, noteImg } from "../service/template-service.js"
+
 export default {
     props: ['note'],
     template: `

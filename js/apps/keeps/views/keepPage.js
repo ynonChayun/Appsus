@@ -1,6 +1,7 @@
-import keepCreate from './cmps/keep-create.cmp.js'
-import keepList from './cmps/keep-list.cmp.js'
-import { noteService } from './service/note-service.js'
+import keepCreate from '../cmps/keep-create.cmp.js'
+import keepList from '../cmps/keep-list.cmp.js'
+import { noteService } from '../service/note-service.js'
+
 
 export default {
     template: `
