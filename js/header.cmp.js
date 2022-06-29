@@ -1,7 +1,7 @@
 export default {
     template: `
  <header>
- <p >header</p>
+ <div class="logo" ><img src="/imgs/logo.png" class="logo-img">&nbsp;mail</div>
  </header>
 `,
     data() {

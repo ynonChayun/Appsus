@@ -1,10 +1,13 @@
+import { eventBus } from "../services/eventBus-service.js"
+
 export default {
     template: `
 <section class="email-side">
- 
-<div class="compose-email">Compose</div>
-<button v-for="status in statuses" @click="setStatus(status)">{{status}}</button>
- 
+ <div class="compose-container" @click="openComposeEmail">
+
+<div class="compose-email"><div class="compose-img"></div> Compose</div>
+</div>
+<button class="list-status" v-for="status in statuses" @click="setStatus(status)"><div :class='status'></div>{{status}}</button>
 
  </section>
 `,
@@ -19,6 +22,9 @@ export default {
     methods: {
         setStatus(status) {
             this.$emit('setStatus', status)
+        },
+        openComposeEmail(){
+            eventBus.emit('openComposeEmail');
         }
     },
     created() {

@@ -1,0 +1,8 @@
+.email-compose-container{
+    background-color: grey;
+    width: 510px;
+    height: 432px;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+}

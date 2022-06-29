@@ -2,6 +2,8 @@
 
 @import './main-page.css';
 @import './parts/base.css';
+@import './parts/fonts.css';
+
 @import './header.css';
 
 /* EMAIL */
@@ -13,6 +15,7 @@
 @import './apps/email/cmps/email-list.css';
 @import './apps/email/cmps/email-app.css';
 @import './apps/email/cmps/email-preview.css';
+@import './apps/email/cmps/email-compose.css';
 
 /* keep */
 

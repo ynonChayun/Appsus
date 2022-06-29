@@ -1,3 +1,8 @@
-.email-list{
+.email-list {
     background-color: #f5f7f7;
+    width: 80%;
+}
+
+.email-list ul {
+    list-style: none;
 }

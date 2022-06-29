@@ -2,4 +2,8 @@
     background-color: #fff;
     border-bottom: .5px solid #eceff1;
     padding-block: 10px;
+    cursor: pointer;
+}
+.email-preview:hover{
+    outline: 1px solid grey;
 }
