@@ -1,4 +1,4 @@
-import { noteText } from "../service/template-service.js"
+import { noteText, noteImg } from "../service/template-service.js"
 export default {
     props: ['note'],
     template: `
@@ -15,6 +15,7 @@ export default {
     },
     components: {
         noteText,
+        noteImg
     },
     created() {},
     methods: {},

@@ -3,7 +3,7 @@ import keepPreview from './keep-preview.cmp.js'
 export default {
     props: ['notes'],
     template: `
-            <section>
+            <section class="note-list">
                 <keep-preview v-for="note in notes"
                     :note="note"
                     :key="note.id"/>
