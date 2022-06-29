@@ -1,5 +1,6 @@
 import emailList from '../cmps/email-list.cmp.js'
 import emailSide from '../cmps/email-side.cmp.js'
+import emailCompose from '../cmps/email-compose.cmp.js'
 
 import { eventBus } from "../services/eventBus-service.js"
 import { emailService } from "../services/email.servics.js"
@@ -10,6 +11,7 @@ export default {
     <section class="email-app">
     <email-side @setStatus="setStatus" />
     <email-list :emails="emails"/>
+    <email-compose />
     </section>
 `,
     data() {
@@ -29,14 +31,19 @@ export default {
             emailService.setEmailAs(action)
             this.setNewEmails()
         },
+        addNewEmail(emailContent) {
+            emailService.addComposeEmail(emailContent)
+        },
     },
     components: {
         emailSide,
         emailList,
+        emailCompose
     },
     created() {
         this.setNewEmails()
         eventBus.on('setEmailAs', this.setEmailAs)
+        eventBus.on('addNewEmail', this.addNewEmail)
 
     },
     unmounted() { },

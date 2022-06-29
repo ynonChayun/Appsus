@@ -1,13 +1,14 @@
 .email-side {
-    width: 255px;
     display: flex;
     flex-direction: column;
+    width: 255px;
 }
 
 .email-side>* {
     padding: 0 12px 0 26px;
     font-size: .875rem;
     font-family: Helvetica, Arial, sans-serif;
+    width: 15rem;
 }
 
 .email-side button {
@@ -18,28 +19,75 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 
 .email-side button:hover {
     background-color: #e8eaed;
+    border-radius: 0 25px 25px 0;
 }
 
 .compose-email {
-    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+    display: flex;
+
+    height: 48px;
+    width: 150px;
 
     font-size: .875rem;
     letter-spacing: .25px;
-    align-items: center;
-
-    border-radius: 24px;
     color: #3c4043;
+    
+    margin-block: 1rem;
+    align-items: center;
+    border-radius: 24px;
+    cursor: pointer;
 
-    display: flex;
-    height: 48px;
-    width: 150px;
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+    transition: box-shadow .08s linear,min-width .15s cubic-bezier(0.4,0,0.2,1);
 }
+
 
 .compose-email:hover{
     box-shadow: 0 1px 3px 0 rgb(60 64 67 / 30%), 0 4px 8px 3px rgb(60 64 67 / 15%);
     background-color: #fafafb;
 }
+
+.compose-img{
+    background-image: url(https://www.gstatic.com/images/icons/material/colored_icons/1x/create_32dp.png);
+    height: 46px;
+    width: 58px;
+    background-repeat: no-repeat;
+    background-position: 10px;
+}
+
+
+.Inbox,.Starred,.Sent,.Drafts,.Trash,.All{
+    height: 20px;
+    width:20px;
+    
+    margin-inline-end: 1.125rem;
+
+    background-repeat: no-repeat;
+    opacity: 0.54;
+}
+.Inbox{
+    background-image: url(https://www.gstatic.com/images/icons/material/system/1x/inbox_black_20dp.png);
+}
+.Starred{
+    background-image: url('https://www.gstatic.com/images/icons/material/system/1x/grade_black_20dp.png');
+}
+.Sent{
+    background-image: url(https://www.gstatic.com/images/icons/material/system/1x/send_black_20dp.png);
+}
+
+.Drafts{
+    background-image: url(https://www.gstatic.com/images/icons/material/system/1x/insert_drive_file_black_20dp.png);
+}
+.Trash{
+    background-image: url(https://www.gstatic.com/images/icons/material/system/1x/delete_black_20dp.png);
+}
+.All{
+    background-image: url(https://www.gstatic.com/images/icons/material/system/1x/mail_black_20dp.png);
+}
+

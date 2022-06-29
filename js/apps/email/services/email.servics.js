@@ -7,7 +7,8 @@ export const emailService = {
     _createEmails,
     query,
     getEmailsToDisplay,
-    setEmailAs
+    setEmailAs,
+    addComposeEmail
 }
 
 const EMAIL_KEY = 'emailDB'
@@ -57,8 +58,9 @@ function _createEmails() {
     return emails
 }
 
-function _createEmail() {
-    return {
+function _createEmail(isRandEmail = true, to, subject, body) {
+
+    if (isRandEmail) return {
         id: utilService.makeId(),
         subject: utilService.makeLorem(2),
         body: utilService.makeLorem(14),
@@ -68,6 +70,22 @@ function _createEmail() {
         status: 'Inbox',//Inbox/Sent/Trash/Draft
         isStared: false
     }
+
+    return {
+        id: utilService.makeId(),
+        subject,
+        body,
+        isRead: false,
+        sentAt: Date.now(),
+        to,
+        status: 'Sent',//Inbox/Sent/Trash/Draft
+        isStared: false
+    }
+}
+
+function addComposeEmail({ to, subject, body }) {
+    const newEmail = _createEmail(false, to, subject, body)
+    storageService.post(EMAIL_KEY,newEmail) 
 }
 
 const loggedinUser = {

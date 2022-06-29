@@ -3,3 +3,16 @@ header{
    border-bottom: .5px solid #eceff1;
    padding: 21px;
 }
+.logo-img{
+   width: 30px;
+   height: 30px;
+   position: relative;
+   top: 4px;
+}
+.logo{
+   font-family: 'prodact-sans';
+   font-size:23px;
+   color: #5f6368;
+   letter-spacing: .8px;
+   
+}
