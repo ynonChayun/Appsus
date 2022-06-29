@@ -3,7 +3,9 @@ import { storageService } from './note-storage.js'
 
 export const keepService = {
     getNotes,
-    createNote
+    createNote,
+    updateNote,
+    removeTodo
 }
 
 const NOTE_KEY = 'notesDB'
@@ -32,6 +34,16 @@ function createNote(noteInfo) {
     }
     gNotes.unshift(note)
     utilsService.saveToStorage(NOTE_KEY, gNotes)
+    return Promise.resolve()
+}
+
+function updateNote(note) {
+    storageService.put(NOTE_KEY, note)
+}
+
+function removeTodo(note, todoIdx) {
+    note.info.todos.splice(todoIdx, 1)
+    storageService.put(NOTE_KEY, note)
     return Promise.resolve()
 }
 

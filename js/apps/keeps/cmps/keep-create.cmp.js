@@ -57,8 +57,6 @@ export default {
             const newNote = JSON.parse(JSON.stringify(this.note))
             if (this.note.noteType === 'todos') {
                 info.title = this.titleValue
-                console.log('this.note.noteType: ', this.note.noteType)
-                console.log('this.txtValue: ', this.txtValue)
                 info[this.note.noteType] = [
                     { txt: this.txtValue }
                 ]

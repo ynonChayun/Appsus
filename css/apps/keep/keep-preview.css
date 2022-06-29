@@ -20,3 +20,33 @@
     object-fit: cover;
     border-radius: 3px;
 }
+
+.todo-complete {
+    text-decoration: line-through;
+}
+
+.todo-uncomplete {
+    text-decoration: none;
+}
+
+.todos-ul {
+    list-style-type: none;
+}
+
+.next-todo-input {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    font-size: 1.2em;
+    height: 1.5em;
+    padding-left: 5px;
+    margin-top: .2em;
+}
+
+.todo-remove-btn {
+    font-size: .8em;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    user-select: none;
+}
