@@ -1,11 +1,12 @@
 import emailPreview from './email-preview.cmp.js'
 
 export default {
+    props:['emails'],
     template: `
  <section class="email-list">
-        <ul>
-            <li v-for="num in 10">
-                <email-preview/>
+        <ul v-if="emails">
+            <li v-for="email in emails">
+                <email-preview :email="email"/>
             </li>
         </ul>
     </section>
@@ -19,6 +20,7 @@ export default {
     methods: {
     },
     created() {
+        
     },
     unmounted() {
     },

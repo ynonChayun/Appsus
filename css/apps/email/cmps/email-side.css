@@ -1,4 +1,45 @@
-.email-side{
-    background-color: lightgreen;
-    flex-grow: 1;
+.email-side {
+    width: 255px;
+    display: flex;
+    flex-direction: column;
+}
+
+.email-side>* {
+    padding: 0 12px 0 26px;
+    font-size: .875rem;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.email-side button {
+    height: 32px;
+    text-align: start;
+    letter-spacing: .2px;
+    color: #202124;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.email-side button:hover {
+    background-color: #e8eaed;
+}
+
+.compose-email {
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+
+    font-size: .875rem;
+    letter-spacing: .25px;
+    align-items: center;
+
+    border-radius: 24px;
+    color: #3c4043;
+
+    display: flex;
+    height: 48px;
+    width: 150px;
+}
+
+.compose-email:hover{
+    box-shadow: 0 1px 3px 0 rgb(60 64 67 / 30%), 0 4px 8px 3px rgb(60 64 67 / 15%);
+    background-color: #fafafb;
 }
