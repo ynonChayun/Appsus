@@ -1,13 +1,12 @@
-import noteCreate from './cmps/note-create.cmp.js'
-import noteList from './cmps/note-list.cmp.js'
+import keepCreate from './cmps/keep-create.cmp.js'
+import keepList from './cmps/keep-list.cmp.js'
 import { noteService } from './service/note-service.js'
 
 export default {
     template: `
     <section class="note-app">
-        hi
-        <note-create></note-create>
-        <note-list :notes="notes"/>
+        <keep-create/>
+        <keep-list :notes="notes"/>
     </section>
 `,
     data() {
@@ -16,8 +15,8 @@ export default {
         };
     },
     components: {
-        noteList,
-        noteCreate,
+        keepCreate,
+        keepList,
     },
     created() {
         noteService.getNotes().then((notes) => {

@@ -15,7 +15,8 @@ function getNotes() {
 function _createExampleNotes() {
     const notes = [{
             id: utilsService.makeId(),
-            type: 'txt',
+            type: 'noteText',
+            noteType: 'txt',
             isPinned: false,
             info: {
                 title: 'First Note',
@@ -27,7 +28,8 @@ function _createExampleNotes() {
         },
         {
             id: utilsService.makeId(),
-            type: 'txt',
+            type: 'noteText',
+            noteType: 'txt',
             isPinned: false,
             info: {
                 title: 'Second Note',
@@ -39,7 +41,8 @@ function _createExampleNotes() {
         },
         {
             id: utilsService.makeId(),
-            type: 'txt',
+            type: 'noteText',
+            noteType: 'txt',
             isPinned: false,
             info: {
                 title: 'Third Note',
