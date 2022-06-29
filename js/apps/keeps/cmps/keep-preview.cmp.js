@@ -1,11 +1,15 @@
-import { noteText, noteImg } from "../service/template-service.js"
+import noteText from './keep-preview-text.cmp.js'
+import noteImg from './keep-preview-image.cmp.js'
+import noteTodos from './keep-preview-todos.cmp.js'
+
 
 export default {
     props: ['note'],
     template: `
-                <section>
-                    <div>
+                <section class="keep-preview">
+                    <div class="keep-type-container" :style="{ backgroundColor: noteBgColor }">
                         <component :is="note.type"
+                            :class="note.type"
                             :note="note">
                         </component>
                     </div>
@@ -16,10 +20,15 @@ export default {
     },
     components: {
         noteText,
-        noteImg
+        noteImg,
+        noteTodos
     },
     created() {},
     methods: {},
-    computed: {},
+    computed: {
+        noteBgColor() {
+            return this.note.style.backgroundColor
+        }
+    },
     unmounted() {},
 };

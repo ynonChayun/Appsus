@@ -1,0 +1,22 @@
+.keep-preview {
+    break-inside: avoid;
+    margin: 0 1rem 1rem 0;
+    vertical-align: baseline;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 3px;
+}
+
+.keep-type-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.keep-preview img {
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 3px;
+}

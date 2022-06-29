@@ -1,13 +1,13 @@
 import keepCreate from '../cmps/keep-create.cmp.js'
 import keepList from '../cmps/keep-list.cmp.js'
-import { noteService } from '../service/note-service.js'
+import { keepService } from '../service/keep-service.js'
 
 
 export default {
     template: `
-    <section class="note-app">
-        <keep-create/>
-        <keep-list :notes="notes"/>
+    <section class="keep-app">
+        <keep-create class="container"/>
+        <keep-list class="container" :notes="notes"/>
     </section>
 `,
     data() {
@@ -20,7 +20,7 @@ export default {
         keepList,
     },
     created() {
-        noteService.getNotes().then((notes) => {
+        keepService.getNotes().then((notes) => {
             this.notes = notes
         })
     },
