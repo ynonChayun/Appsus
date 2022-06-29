@@ -15,7 +15,8 @@ function getNotes() {
 function _createExampleNotes() {
     const notes = [{
             id: utilsService.makeId(),
-            type: 'txt',
+            type: 'noteText',
+            noteType: 'txt',
             isPinned: false,
             info: {
                 title: 'First Note',
@@ -27,7 +28,8 @@ function _createExampleNotes() {
         },
         {
             id: utilsService.makeId(),
-            type: 'txt',
+            type: 'noteText',
+            noteType: 'txt',
             isPinned: false,
             info: {
                 title: 'Second Note',
@@ -39,11 +41,12 @@ function _createExampleNotes() {
         },
         {
             id: utilsService.makeId(),
-            type: 'txt',
+            type: 'noteImg',
+            noteType: 'txt',
             isPinned: false,
             info: {
                 title: 'Third Note',
-                txt: 'Hi again!'
+                img: 'https://images.unsplash.com/photo-1656380605767-28a92b240053?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=386&q=80'
             },
             style: {
                 backgroundColor: '#FFFFFF',

@@ -5,7 +5,7 @@ const options = {
     template: `
     <section class="main-page">
     <main-header />
-    <router-view class="main-component"/>
+    <router-view />
     </section>
 `,
     data() {
