@@ -7,20 +7,32 @@ export const emailService = {
     _createEmails,
     query,
     getEmailsToDisplay,
-    setEmailAs,
+    toggleMode,
     addComposeEmail
 }
 
 const EMAIL_KEY = 'emailDB'
 
-function setEmailAs({ mode, id }) {
+function toggleMode({ mode, id }) {
     storageService.get(EMAIL_KEY, id)
         .then(email => {
             if (mode === 'Trash') {
-                email.status = mode
-                email.isStared = false
+                if (email.status === 'Trash') {
+                    
+                    query()
+                    .then(emails => {
+                        const idx = emails.findIndex(email => email.id === id);
+                        emails.splice(idx, 1)
+                        storageService.save(EMAIL_KEY, emails)
+                    })
+
+                }
+                else {
+                    email.status = mode
+                    email.isStared = false
+                }
             }
-            else email.isStared = true
+            else email.isStared = !email.isStared
 
             storageService.put(EMAIL_KEY, email)
         }
@@ -68,7 +80,8 @@ function _createEmail(isRandEmail = true, to, subject, body) {
         sentAt: Date.now(),
         to: loggedinUser.email,
         status: 'Inbox',//Inbox/Sent/Trash/Draft
-        isStared: false
+        isStared: false,
+        from: utilService.randName()
     }
 
     return {
@@ -79,13 +92,14 @@ function _createEmail(isRandEmail = true, to, subject, body) {
         sentAt: Date.now(),
         to,
         status: 'Sent',//Inbox/Sent/Trash/Draft
-        isStared: false
+        isStared: false,
+        from: 'Me'
     }
 }
 
 function addComposeEmail({ to, subject, body }) {
     const newEmail = _createEmail(false, to, subject, body)
-    storageService.post(EMAIL_KEY,newEmail) 
+    storageService.post(EMAIL_KEY, newEmail)
 }
 
 const loggedinUser = {

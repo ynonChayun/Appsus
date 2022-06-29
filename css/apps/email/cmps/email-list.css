@@ -1,8 +1,30 @@
-.email-list {
-    background-color: #f5f7f7;
-    width: 80%;
-}
 
 .email-list ul {
     list-style: none;
+    max-width: 77vw;
+    max-height: 87vh;
+    position: relative;
+    overflow: auto;
+}
+/* 
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+  ::-webkit-scrollbar-track:hover{
+    background: #ebe8e8; 
+  }
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    max-height: 10px;
+    background: #d6cfcf; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(182, 179, 179); 
+  } 
+
+  ::-webkit-scrollbar {
+    width: 12px;
 }

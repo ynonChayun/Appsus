@@ -10,7 +10,9 @@ export default {
     template: `
     <section class="email-app">
     <email-side @setStatus="setStatus" />
+    <div class="main-container">
     <email-list :emails="emails"/>
+    </div>
     <email-compose />
     </section>
 `,
@@ -27,8 +29,8 @@ export default {
             emailFilter.setStatus(status)
             this.setNewEmails()
         },
-        setEmailAs(action) {
-            emailService.setEmailAs(action)
+        toggleMode(action) {
+            emailService.toggleMode(action)
             this.setNewEmails()
         },
         addNewEmail(emailContent) {
@@ -42,7 +44,7 @@ export default {
     },
     created() {
         this.setNewEmails()
-        eventBus.on('setEmailAs', this.setEmailAs)
+        eventBus.on('toggleMode', this.toggleMode)
         eventBus.on('addNewEmail', this.addNewEmail)
 
     },

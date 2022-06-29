@@ -3,6 +3,7 @@ export const utilService = {
     loadFromStorage,
     makeId,
     makeLorem,
+    randName
 }
 
 function saveToStorage(key, value) {
@@ -27,10 +28,17 @@ function makeId(length = 5) {
 function makeLorem(length = 10) {
     const words = ["The sky", "above", "the port", "was", "the color of television", "tuned", "to", "a dead channel", ".", "All", "this happened", "more or less", ".", "I", "had", "the story", "bit by bit", "from various people", "and", "as generally", "happens", "in such cases", "each time", "it", "was", "a different story", ".", "It", "was", "a pleasure", "to", "burn"];
 
-        var sentence = "";
-        while (length--) {
-            sentence += words[Math.floor(Math.random() * words.length)] + " ";
-        }
-        return sentence;
+    var sentence = "";
+    while (length--) {
+        sentence += words[Math.floor(Math.random() * words.length)] + " ";
+    }
+    return sentence;
+
+}
+
+function randName() {
+    const names = ["Yaron Biton", "Matan Crispel", "Third King Yuval Levi", "Inbar Tzvik", "Adam Bercovich", "Amir Inbar", "Rotem Bublil", "Dimaaa"]
+
+    return names[Math.floor(Math.random() * names.length)]
 
 }

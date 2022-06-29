@@ -3,12 +3,13 @@ import { eventBus } from "../services/eventBus-service.js"
 export default {
     template: `
  <form class="email-compose-container" @submit.prevent="addNewEmail" v-if='this.shouldShow'>
-    <header>New Message</header>
+    <header>New Message <div class="close-compose" @click="shouldShow = false">x</div></header>
+    <div class="content">
     <input type="text" placeholder="Recipients" v-model="to">
     <input type="text" placeholder="Subject" v-model="subject">
-    <input type="text" v-model="body">
-
-    <button>Send</button>
+    <input type="text" v-model="body" class="body-input">
+    <button class="send">Send</button>
+    </div>
     </form>
 `,
     data() {
@@ -39,6 +40,7 @@ export default {
         },
         openComposeEmail(){
             this.shouldShow = true
+            
         }
     },
     created() {
