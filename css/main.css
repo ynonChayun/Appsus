@@ -1,14 +1,21 @@
 /* MAIN */
+
 @import './main-page.css';
 @import './parts/base.css';
 @import './header.css';
 
 /* EMAIL */
+
+
 /* CMPS */
+
 @import './apps/email/cmps/email-side.css';
 @import './apps/email/cmps/email-list.css';
 @import './apps/email/cmps/email-app.css';
 @import './apps/email/cmps/email-preview.css';
 
 /* keep */
+
 @import './apps/keep/keep-app.css';
+@import './apps/keep/keep-list.css';
+@import './apps/keep/keep-preview.css';
