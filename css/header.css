@@ -1,6 +1,9 @@
 header{
+   display: flex;
    border-bottom: .5px solid #eceff1;
    padding: 21px;
+   height: 10vh;
+   align-items: center;
 }
 .logo-img{
    width: 30px;
@@ -13,5 +16,5 @@ header{
    font-size:23px;
    color: #5f6368;
    letter-spacing: .8px;
-   
+   margin-inline-end: 8.7rem;
 }

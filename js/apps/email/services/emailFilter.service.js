@@ -1,11 +1,15 @@
 export const emailFilter = {
     setStatus,
-    getFilter
+    getFilter,
+    setTxt
 }
 
 function setStatus(status) {
     filter.status = status
-    
+}
+
+function setTxt(txt){
+    filter.txt = txt
 }
 
 function getFilter(){

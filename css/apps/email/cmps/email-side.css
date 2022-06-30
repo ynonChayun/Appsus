@@ -1,7 +1,7 @@
 .email-side {
     display: flex;
     flex-direction: column;
-    width: 17.9vw;
+    flex-grow: 186;
 }
 
 .email-side>* {
@@ -22,7 +22,7 @@
 
     border: none;
     padding-inline-start: 1.625rem;
-    
+
     cursor: pointer;
     background-color: #fff;
 }
@@ -47,7 +47,7 @@
     align-items: center;
     border-radius: 24px;
     cursor: pointer;
-    
+
     font-family: prodact-sans-bold;
 
     box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
@@ -62,7 +62,7 @@
 .compose-img {
     height: 2.875rem;
     width: 3.625rem;
-    
+
     background-image: url(https://www.gstatic.com/images/icons/material/colored_icons/1x/create_32dp.png);
     background-repeat: no-repeat;
     background-position: 10px;

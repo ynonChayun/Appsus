@@ -8,35 +8,33 @@ export const emailService = {
     query,
     getEmailsToDisplay,
     toggleMode,
-    addComposeEmail
+    addComposeEmail,
 }
 
 const EMAIL_KEY = 'emailDB'
 
 function toggleMode({ mode, id }) {
-    storageService.get(EMAIL_KEY, id)
-        .then(email => {
-            if (mode === 'Trash') {
-                if (email.status === 'Trash') {
-                    
-                    query()
-                    .then(emails => {
-                        const idx = emails.findIndex(email => email.id === id);
-                        emails.splice(idx, 1)
-                        storageService.save(EMAIL_KEY, emails)
-                    })
+    return query().then(emails =>
+        storageService.get(EMAIL_KEY, id)
+            .then(email => {
+                const idx = emails.findIndex(currEmail => currEmail.id === email.id);
 
+                if (mode === 'Trash' && email.status === 'Trash') {
+                    emails.splice(idx, 1)
                 }
                 else {
-                    email.status = mode
-                    email.isStared = false
-                }
-            }
-            else email.isStared = !email.isStared
+                    if (mode === 'Trash') {
+                        email.status = 'Trash'
+                        email.isStared = false
+                    } else email.isStared = !email.isStared
 
-            storageService.put(EMAIL_KEY, email)
-        }
-        )
+                    emails.splice(idx, 1, email)
+                }
+                storageService.save(EMAIL_KEY, emails)
+                return Promise.resolve(emails)
+            }))
+
+
 }
 
 function query() {
@@ -55,6 +53,7 @@ function query() {
 
 function getEmailsToDisplay() {
     const filter = emailFilter.getFilter()
+    console.log(filter);
     return query().then(
         emails => {
             if (filter.status == 'All') return emails
