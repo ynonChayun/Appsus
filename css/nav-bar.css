@@ -34,7 +34,15 @@
 @media (max-width: 750px) {
     .main-nav {
         right: 0;
-        top: 74px;
+        top: 78px;
+    }
+}
+
+@media (max-width:400px) {
+    .main-nav {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        border-radius: 10px 0px 0px 10px;
     }
 }
 

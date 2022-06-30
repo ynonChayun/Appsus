@@ -20,6 +20,7 @@ export default {
                     </button>    
             </div>
             <button @click="createNote">Add note</button>
+        </div>
     </section>
     `,
     data() {
