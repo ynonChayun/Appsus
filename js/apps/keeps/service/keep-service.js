@@ -5,7 +5,10 @@ export const keepService = {
     getNotes,
     createNote,
     updateNote,
-    removeTodo
+    removeTodo,
+    removeNote,
+    duplicateNote,
+    changeNoteColorBgc,
 }
 
 const NOTE_KEY = 'notesDB'
@@ -45,6 +48,27 @@ function removeTodo(note, todoIdx) {
     note.info.todos.splice(todoIdx, 1)
     storageService.put(NOTE_KEY, note)
     return Promise.resolve()
+}
+
+function removeNote(id) {
+    storageService.remove(NOTE_KEY, id)
+    return Promise.resolve()
+}
+
+function duplicateNote(note) {
+    storageService.post(NOTE_KEY, note)
+    return Promise.resolve()
+
+}
+
+function changeNoteColorBgc(note, color) {
+    return storageService.get(NOTE_KEY, note.id).then((note) => {
+        let newNote = JSON.parse(JSON.stringify(note))
+        newNote.style.backgroundColor = '#' + color
+        storageService.put(NOTE_KEY, newNote)
+        return newNote
+    })
+
 }
 
 function _createExampleNotes() {

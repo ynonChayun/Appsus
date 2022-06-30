@@ -1,0 +1,63 @@
+.white {
+    background-color: #ffffff;
+}
+
+.peach {
+    background-color: #f28b82;
+}
+
+.orange {
+    background-color: #fbbc04;
+}
+
+.yellow {
+    background-color: #fff475;
+}
+
+.green {
+    background-color: #ccff90;
+}
+
+.teal {
+    background-color: #a7ffeb;
+}
+
+.light-blue {
+    background-color: #cbf0f8;
+}
+
+.dark-blue {
+    background-color: #aecbfa;
+}
+
+.purple {
+    background-color: #d7aefb;
+}
+
+.pink {
+    background-color: #fdcfe8;
+}
+
+.browm {
+    background-color: #e6c9a8;
+}
+
+.grey {
+    background-color: #e8eaed;
+}
+
+.note-colors-palette {
+    border-radius: 50%;
+    width: 1.5em;
+    height: 1.5em;
+    margin: .1em;
+    cursor: pointer;
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+    transition: box-shadow .08s linear, min-width .15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.note-colors-palette-container {
+    background-color: white;
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+    transition: box-shadow .08s linear, min-width .15s cubic-bezier(0.4, 0, 0.2, 1);
+}

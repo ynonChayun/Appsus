@@ -1,6 +1,7 @@
 import noteText from './keep-preview-text.cmp.js'
 import noteImg from './keep-preview-image.cmp.js'
 import noteTodos from './keep-preview-todos.cmp.js'
+import noteMenu from './keep-menu.cmp.js'
 
 
 export default {
@@ -13,6 +14,7 @@ export default {
                             :note="note">
                         </component>
                     </div>
+                    <note-menu :note="note"/>
                 </section>
             `,
     data() {
@@ -21,7 +23,8 @@ export default {
     components: {
         noteText,
         noteImg,
-        noteTodos
+        noteTodos,
+        noteMenu
     },
     created() {},
     methods: {},

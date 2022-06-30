@@ -1,12 +1,11 @@
-
 import emailFilter from '../js/apps/email/cmps/email-filter.cmp.js'
 import mainNav from './main-nav.cmp.js'
 
 export default {
     template: `
- <header>
- <div class="logo" ><img src="/imgs/logo.png" class="logo-img">&nbsp;mail</div>
- <email-filter/>
+            <header>
+                <div class="logo" ><img src="/imgs/logo.png" class="logo-img">&nbsp;mail</div>
+                <email-filter/>
                 <div class="menu-icon-container">
                     <img class="menu-icon" @click="isMenuOpen = !isMenuOpen"
                     src="imgs/dots-menu.png" />
@@ -24,6 +23,6 @@ export default {
         mainNav,
     },
     methods: {},
-    created() { },
-    unmounted() { },
+    created() {},
+    unmounted() {},
 };

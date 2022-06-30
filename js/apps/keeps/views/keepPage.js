@@ -28,11 +28,13 @@ export default {
         eventBus.on('addTodo', this.updateNote)
         eventBus.on('removeTodo', this.removeTodo)
         eventBus.on('toggleTodoComplete', this.updateNote)
+        eventBus.on('removeNote', this.onRemoveNote)
+        eventBus.on('duplicateNote', this.onDuplicateNote)
+        eventBus.on('changeNoteColor', this.onChangeNoteColor)
     },
     methods: {
         addNote() {
             keepService.getNotes().then((notes) => {
-                console.log('notes: ', notes)
                 this.notes = notes
             })
         },
@@ -47,6 +49,27 @@ export default {
             })
 
         },
+        onRemoveNote(id) {
+            keepService.removeNote(id).then(() => {
+                keepService.getNotes().then((notes) => {
+                    this.notes = notes
+                })
+            })
+        },
+        onDuplicateNote(note) {
+            keepService.duplicateNote(note).then(() => {
+                keepService.getNotes().then((notes) => {
+                    this.notes = notes
+                })
+            })
+        },
+        onChangeNoteColor({ note, color }) {
+            keepService.changeNoteColorBgc(note, color).then(() => {
+                keepService.getNotes().then((notes) => {
+                    this.notes = notes
+                })
+            })
+        }
     },
     computed: {},
     unmounted() {},
