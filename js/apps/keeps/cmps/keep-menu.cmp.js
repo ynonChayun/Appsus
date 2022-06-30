@@ -12,6 +12,8 @@ export default {
         </div>        
         <button class="note-menu-btn" @click="removeNote"><i class="fas fa-trash-alt"></i></button>
         <button class="note-menu-btn" @click="duplicateNote"><i class="fas fa-solid fa-copy"></i></button>
+        <button class="note-menu-btn" :class="pinnedClass" @click="togglePinned"><i class="fas fa-thumbtack"></i></button>
+
     </section>
 
 `,
@@ -39,9 +41,15 @@ export default {
                 color: colorId
             }
             eventBus.emit('changeNoteColor', NoteAndColor)
-
+        },
+        togglePinned() {
+            eventBus.emit('togglePinned', this.note)
         }
     },
-    computed: {},
+    computed: {
+        pinnedClass() {
+            return (this.note.isPinned) ? 'pinned-note' : ''
+        }
+    },
     unmounted() {},
 };

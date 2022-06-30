@@ -16,7 +16,7 @@
 .note-menu-btn {
     justify-content: center;
     align-items: center;
-    margin-bottom: .5em;
+    margin: 0, auto;
     padding: 10px 10px;
     font-size: 1.25em;
     width: 2em;
@@ -33,9 +33,6 @@
     background-color: rgb(66 133 244 / 20%)
 }
 
-.color-select {
-    position: absolute;
-    display: none;
-    left: -500%;
-    padding: 5px 10px 10px;
+.pinned-note {
+    color: #ffba00;
 }

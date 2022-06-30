@@ -31,6 +31,7 @@ export default {
         eventBus.on('removeNote', this.onRemoveNote)
         eventBus.on('duplicateNote', this.onDuplicateNote)
         eventBus.on('changeNoteColor', this.onChangeNoteColor)
+        eventBus.on('togglePinned', this.onTogglePinned)
     },
     methods: {
         addNote() {
@@ -65,6 +66,13 @@ export default {
         },
         onChangeNoteColor({ note, color }) {
             keepService.changeNoteColorBgc(note, color).then(() => {
+                keepService.getNotes().then((notes) => {
+                    this.notes = notes
+                })
+            })
+        },
+        onTogglePinned(note) {
+            keepService.toggleNotePinned(note).then(() => {
                 keepService.getNotes().then((notes) => {
                     this.notes = notes
                 })
