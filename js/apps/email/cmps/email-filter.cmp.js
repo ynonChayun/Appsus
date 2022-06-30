@@ -7,7 +7,7 @@ export default {
         </svg>
         <input type="text" placeholder="Search mail" v-model="filterByTxt" @click="isActive = !isActive">
     
-        <svg class="close-symbol" @click="filterByTxt = ''" focusable="false" height="24px" viewBox="0 0 24 24" width="24px" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg>
+        <svg class="close-symbol" @click="clearInput" focusable="false" height="24px" viewBox="0 0 24 24" width="24px" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg>
 
         <svg class="filter-symbol" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"></path></svg>
     
@@ -23,8 +23,10 @@ export default {
     },
     methods: {
         searchEmail() {
-            if (!this.filterByTxt) return
-            
+            eventBus.emit('searchEmail', this.filterByTxt)
+        },
+        clearInput(){
+            this.filterByTxt = ''
             eventBus.emit('searchEmail', this.filterByTxt)
         }
     },
@@ -33,5 +35,6 @@ export default {
     unmounted() {
     },
     computed: {
+
     }
 };

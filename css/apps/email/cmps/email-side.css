@@ -1,11 +1,10 @@
 .email-side {
     display: flex;
     flex-direction: column;
-    flex-grow: 186;
+    width: 255px;
 }
 
 .email-side>* {
-    width: 15rem;
     font-size: .875rem;
     font-family: roboto;
 }

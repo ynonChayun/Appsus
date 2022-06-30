@@ -19,18 +19,24 @@ header {
     font-size: 23px;
     color: #5f6368;
     letter-spacing: .8px;
-    /* margin-inline-end: 8.7rem; */
+    width: 255px;
 }
 
 .menu-icon-container {
     display: flex;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
     border-radius: 50%;
+    flex-grow: 7;
 }
 
 .menu-icon {
     width: 30px;
     height: 30px;
     cursor: pointer;
+}
+
+.logo-and-filter{
+    display: flex;
+    flex-grow: 10;
 }

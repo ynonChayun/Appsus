@@ -3,8 +3,8 @@
     height: 2.5rem;
     background-color:
         #f1f3f4;
-    width: 600px;
     border-radius: 8px;
+    flex-grow: 1;
 }
 
 .email-filter-text input {

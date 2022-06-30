@@ -5,11 +5,7 @@
   height: 89vh;
   overflow: auto;
   flex-shrink: 10;
-}
-
-.email-list-container {
-  width: 100%;
-  max-width: 1025px;
+  flex-basis: 1020px;
 }
 
 /* 

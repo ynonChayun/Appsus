@@ -3,3 +3,7 @@
     flex-direction: column;
     height: 100vh;
 }
+
+.main-cmp{
+    flex-grow: 1;
+}

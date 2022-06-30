@@ -2,7 +2,7 @@ import { eventBus } from "../services/eventBus-service.js"
 
 export default {
     template: `
-<section class="email-side">
+<section>
  <div class="compose-container" @click="openComposeEmail">
 
 <div class="compose-email"><div class="compose-img"></div> Compose</div>

@@ -4,11 +4,11 @@ import { eventBus } from "../services/eventBus-service.js"
 export default {
     props: ['email'],
     template: `
-    <div class="email-preview">
+    <div class="email-preview" @click="selectEmail(email)">
 
     <div class="start-preview ">
        <div :class="{'star-active' : email.isStared , 'star-preview' : !email.isStared }" 
-       class="symbol" @click="toggleMode('star',email.id)"
+       class="symbol" @click.stop="toggleMode('star',email.id)"
        ></div>
     </div>
 
@@ -17,13 +17,15 @@ export default {
         <div class="subject">{{email.subject}}-&nbsp;&nbsp;</div>
         <div class="body">{{email.body}}</div>
         </div>
+        
         <div class="time-preview">{{getFormatedTime}}</div>
         <div class="end-preview">
             <div class="archive-email symbol"></div>
-            <div class="Trash trash-email symbol" @click="toggleMode('Trash',email.id)"></div>
+            <div class="Trash trash-email symbol" @click.stop="toggleMode('Trash',email.id)"></div>
             <div class="mark-read symbol"></div>
         </div>
     </div>
+
 `,
     data() {
         return {
@@ -36,6 +38,9 @@ export default {
         toggleMode(mode, id) {
             eventBus.emit('toggleMode', { mode, id });
         },
+        selectEmail(email){
+            eventBus.emit('selectEmail', email)
+        }
 
     }, computed: {
         getFormatedTime() {

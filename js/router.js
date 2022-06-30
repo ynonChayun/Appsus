@@ -13,7 +13,7 @@ const routes = [
     },
     {
         path: '/mail',
-        component: mailPage
+        component: mailPage,
     },
 ]
 

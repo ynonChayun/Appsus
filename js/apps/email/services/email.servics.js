@@ -31,7 +31,7 @@ function toggleMode({ mode, id }) {
                     emails.splice(idx, 1, email)
                 }
                 storageService.save(EMAIL_KEY, emails)
-                return Promise.resolve(emails)
+                return getEmailsToDisplay()
             }))
 
 
@@ -53,12 +53,27 @@ function query() {
 
 function getEmailsToDisplay() {
     const filter = emailFilter.getFilter()
-    console.log(filter);
     return query().then(
         emails => {
-            if (filter.status == 'All') return emails
-            if (filter.status === 'Starred') return emails.filter(email => email.isStared)
-            return emails.filter(email => email.status === filter.status)
+            if (filter.status !== 'All') {
+                console.log('ho');
+                if (filter.status === 'Starred') emails = emails.filter(email => email.isStared)
+                else emails = emails.filter(email => email.status === filter.status)
+            }
+
+            if (!filter.txt) return emails
+            return emails.filter(email => {
+                var checkDatas =
+                    [email.subject,
+                    email.body,
+                    email.to,
+                    email.from]
+
+                checkDatas = checkDatas.filter(data => { if (data) return data })
+                checkDatas = checkDatas.map(data => data.toLowerCase())
+
+                if (checkDatas.some(str => str.includes(filter.txt.toLowerCase()))) return email
+            })
         }
     )
 }
@@ -98,7 +113,7 @@ function _createEmail(isRandEmail = true, to, subject, body) {
 
 function addComposeEmail({ to, subject, body }) {
     const newEmail = _createEmail(false, to, subject, body)
-    storageService.post(EMAIL_KEY, newEmail)
+    return storageService.post(EMAIL_KEY, newEmail).then(newEntiti => getEmailsToDisplay())
 }
 
 const loggedinUser = {

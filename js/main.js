@@ -5,7 +5,7 @@ const options = {
     template: `
     <section class="main-page">
     <main-header />
-    <router-view />
+    <router-view class="main-cmp" />
     </section>
 `,
     data() {
