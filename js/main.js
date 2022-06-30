@@ -1,4 +1,4 @@
-import  {router}  from './router.js'
+import { router } from './router.js'
 import mainHeader from './header.cmp.js'
 
 const options = {
@@ -11,13 +11,13 @@ const options = {
     data() {
         return {};
     },
-    created() { },
-    components :{
+    created() {},
+    components: {
         mainHeader
     },
     methods: {},
     computed: {},
-    unmounted() { },
+    unmounted() {},
 };
 
 const app = Vue.createApp(options);

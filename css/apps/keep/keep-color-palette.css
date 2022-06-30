@@ -65,10 +65,17 @@
     padding: 5px 10px 10px;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 800px) {
     .color-select {
-        flex-direction: column;
-        top: 5px;
-        left: -100%;
+        /* flex-direction: row; */
+        top: 40px;
+        left: -400%;
+    }
+}
+
+@media (max-width: 320px) {
+    .color-select {
+        top: 40px;
+        left: -350%;
     }
 }

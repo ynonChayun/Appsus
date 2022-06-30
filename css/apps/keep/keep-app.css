@@ -6,10 +6,5 @@
 
 .container {
     width: 97vw;
-}
-
-@media (max-width: 850px) {
-    .container {
-        width: unset;
-    }
+    margin-bottom: 1em;
 }

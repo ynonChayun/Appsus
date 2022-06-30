@@ -1,6 +1,7 @@
 import noteText from './keep-preview-text.cmp.js'
 import noteImg from './keep-preview-image.cmp.js'
 import noteTodos from './keep-preview-todos.cmp.js'
+import noteVideo from './keep-preview-video.cmp.js'
 import noteMenu from './keep-menu.cmp.js'
 
 
@@ -24,6 +25,7 @@ export default {
         noteText,
         noteImg,
         noteTodos,
+        noteVideo,
         noteMenu
     },
     created() {},

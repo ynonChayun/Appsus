@@ -1,9 +1,9 @@
-.main-page{
+.main-page {
     display: flex;
     flex-direction: column;
     height: 100vh;
 }
 
-.main-cmp{
+.main-cmp {
     flex-grow: 1;
 }

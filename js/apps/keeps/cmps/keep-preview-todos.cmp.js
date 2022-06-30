@@ -3,7 +3,7 @@ export default {
     props: ['note'],
     template: `
     <section class="keep-template">
-        <h4 class="title-txt">{{note.info.title}}</h4>
+        <h4 v-if="note.info.title" class="title-txt">{{note.info.title}}</h4>
         <ul v-if="note.info.todos" class="todos-ul">
             <li v-for="(todo, idx) in note.info.todos"
             :class=" {'todo-complete' : todo.isComplete, 'todo-uncomplete' : !todo.isComplete}"

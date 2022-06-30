@@ -9,13 +9,16 @@ export default {
                  <input class="txt-input" :placeholder="placeholderTxt" v-model="txtValue">
             </div>
             <div class="note-type-btns">
-                    <button class="change-btn" @click="changeType('noteText')">
+                    <button title="Text Note" class="change-btn" @click="changeType('noteText')">
                         <i class="far fa-comment"></i>
                     </button>
-                    <button class="change-btn" @click="changeType('noteImg')">
+                    <button title="Image Note" class="change-btn" @click="changeType('noteImg')">
                         <i class="far fa-image"></i>
                     </button>
-                    <button class="change-btn" @click="changeType('noteTodos')">
+                    <button title="Video(YT) Note" class="change-btn" @click="changeType('noteVideo')">
+                    <i  class="fab fa-youtube"></i>
+                    </button>
+                    <button title="List Note" class="change-btn" @click="changeType('noteTodos')">
                         <i class="fas fa-list-ul"></i>
                     </button>    
             </div>
@@ -57,6 +60,10 @@ export default {
                 })
                 info.title = this.titleValue
                 info[this.note.noteType] = todosList
+            } else if (this.note.noteType === 'video') {
+                info.title = this.titleValue
+                info.video = this.getId(this.txtValue)
+                console.log('info.video: ', info.video)
             } else {
                 info.title = this.titleValue
                 info[this.note.noteType] = this.txtValue
@@ -67,6 +74,13 @@ export default {
                 this.txtValue = ''
                 this.$emit('noteAdded')
             })
+        },
+        getId(url) {
+            const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+            const match = url.match(regExp);
+            console.log('match: ', match)
+
+            return (match && match[2].length === 11) ? match[2] : null
         }
     },
     computed: {
@@ -75,6 +89,8 @@ export default {
                 return 'What\'s on your mind...'
             } else if (this.note.type === 'noteImg') {
                 return 'Enter image url...'
+            } else if (this.note.type === 'noteVideo') {
+                return 'Enter Youtube url...'
             } else if (this.note.type === 'noteTodos') {
                 return 'Enter list title...'
             }

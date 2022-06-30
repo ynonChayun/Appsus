@@ -7,12 +7,12 @@ export default {
     template: `
     <section class="keep-menu">
         <div class="note-color-btn-container">
-            <button class=" note-menu-btn" ><i class="fas fa-palette"></i></button>
+            <button title="Change Note Color" class=" note-menu-btn" ><i class="fas fa-palette"></i></button>
             <color-select class="color-select" @colorPicked="changeColor"/>
         </div>        
-        <button class="note-menu-btn" @click="removeNote"><i class="fas fa-trash-alt"></i></button>
-        <button class="note-menu-btn" @click="duplicateNote"><i class="fas fa-solid fa-copy"></i></button>
-        <button class="note-menu-btn" :class="pinnedClass" @click="togglePinned"><i class="fas fa-thumbtack"></i></button>
+        <button title="Delete Note" class="note-menu-btn" @click="removeNote"><i class="fas fa-trash-alt"></i></button>
+        <button title="Duplicate Note" class="note-menu-btn" @click="duplicateNote"><i class="fas fa-solid fa-copy"></i></button>
+        <button title="Pin Note" class="note-menu-btn" :class="pinnedClass" @click="togglePinned"><i class="fas fa-thumbtack"></i></button>
 
     </section>
 
