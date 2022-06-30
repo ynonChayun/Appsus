@@ -5,7 +5,11 @@ export const keepService = {
     getNotes,
     createNote,
     updateNote,
-    removeTodo
+    removeTodo,
+    removeNote,
+    duplicateNote,
+    changeNoteColorBgc,
+    toggleNotePinned
 }
 
 const NOTE_KEY = 'notesDB'
@@ -47,12 +51,41 @@ function removeTodo(note, todoIdx) {
     return Promise.resolve()
 }
 
+function removeNote(id) {
+    storageService.remove(NOTE_KEY, id)
+    return Promise.resolve()
+}
+
+function duplicateNote(note) {
+    storageService.post(NOTE_KEY, note)
+    return Promise.resolve()
+
+}
+
+function changeNoteColorBgc(note, color) {
+    return storageService.get(NOTE_KEY, note.id).then((note) => {
+        let newNote = JSON.parse(JSON.stringify(note))
+        newNote.style.backgroundColor = '#' + color
+        storageService.put(NOTE_KEY, newNote)
+        return newNote
+    })
+}
+
+function toggleNotePinned(note) {
+    return storageService.get(NOTE_KEY, note.id).then((note) => {
+        let newNote = JSON.parse(JSON.stringify(note))
+        newNote.isPinned = !newNote.isPinned
+        storageService.put(NOTE_KEY, newNote)
+        return newNote
+    })
+}
+
 function _createExampleNotes() {
     const notes = [{
             id: utilsService.makeId(),
             type: 'noteText',
             noteType: 'txt',
-            isPinned: false,
+            isPinned: true,
             info: {
                 title: 'First Note',
                 txt: 'Hi everyone!'
@@ -151,9 +184,9 @@ function _createExampleNotes() {
             id: utilsService.makeId(),
             type: 'noteImg',
             noteType: 'txt',
-            isPinned: false,
+            isPinned: true,
             info: {
-                title: 'Third Note',
+                title: 'Try sOmRHIN',
                 img: 'https://images.unsplash.com/photo-1626025437642-0b05076ca301?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=534&q=80'
             },
             style: {

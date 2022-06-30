@@ -8,10 +8,8 @@
     z-index: 2;
     padding: 15px;
     border-radius: 10px;
-  
     box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
     transition: box-shadow .08s linear, min-width .15s cubic-bezier(0.4, 0, 0.2, 1);
-
     background-color: white;
 }
 
@@ -34,6 +32,11 @@
     margin-bottom: 3px;
 }
 
+.nav-link:hover {
+    box-shadow: 0 1px 3px 0 rgb(60 64 67 / 30%), 0 4px 8px 3px rgb(60 64 67 / 15%);
+    background-color: rgb(66 133 244 / 20%)
+}
+
 @media (max-width: 750px) {
     .main-nav {
         right: 0;
@@ -47,9 +50,4 @@
         grid-template-rows: 1fr;
         border-radius: 10px 0px 0px 10px;
     }
-}
-
-.nav-link:hover {
-    box-shadow: 0 1px 3px 0 rgb(60 64 67 / 30%), 0 4px 8px 3px rgb(60 64 67 / 15%);
-    background-color: rgb(66 133 244 / 20%)
 }
