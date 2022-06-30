@@ -5,9 +5,10 @@ export default {
     props: ['notes'],
     template: `
             <section class="keep-list">
-                    <keep-preview v-for="note in notes"
+                <keep-preview v-for="note in notes"
                     :note="note"
                     :key="note.id"/>
+
                     <keep-preview-unpinned v-for="note in notes"
                     :note="note"
                     :key="note.id"/>
