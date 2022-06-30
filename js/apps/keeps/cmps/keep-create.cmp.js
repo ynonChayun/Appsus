@@ -6,10 +6,9 @@ export default {
         <div class="note-add">
             <div class="note-content-inputs"  @keyup.enter="createNote" >
                  <input class="txt-input" placeholder="Title" v-model="titleValue">
-                 <input class="txt-input" :placeholder="placeholderTxt"v-model="txtValue">
+                 <input class="txt-input" :placeholder="placeholderTxt" v-model="txtValue">
             </div>
             <div class="note-type-btns">
-                <div class="type-btn">
                     <button class="change-btn" @click="changeType('noteText')">
                         <i class="far fa-comment"></i>
                     </button>
@@ -19,11 +18,8 @@ export default {
                     <button class="change-btn" @click="changeType('noteTodos')">
                         <i class="fas fa-list-ul"></i>
                     </button>    
-                </div>
-                <div>
-                    <button @click="createNote">Add note</button>
-                </div>
             </div>
+            <button @click="createNote">Add note</button>
         </div>
     </section>
     `,
@@ -55,10 +51,12 @@ export default {
             }
             const newNote = JSON.parse(JSON.stringify(this.note))
             if (this.note.noteType === 'todos') {
+                const todosStr = this.txtValue.split(',')
+                const todosList = todosStr.map((todo) => {
+                    return { 'txt': todo }
+                })
                 info.title = this.titleValue
-                info[this.note.noteType] = [
-                    { txt: this.txtValue }
-                ]
+                info[this.note.noteType] = todosList
             } else {
                 info.title = this.titleValue
                 info[this.note.noteType] = this.txtValue

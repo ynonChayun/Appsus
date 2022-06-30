@@ -8,7 +8,7 @@
     border-radius: 10px;
     box-shadow: 0 0 18px 0 grey;
     background-color: white;
-    width: 50%;
+    width: 800px;
 }
 
 .note-content-inputs {
@@ -28,20 +28,14 @@
 
 .note-type-btns {
     width: 100%;
-    margin: 20px 0;
+    /* margin: 20px 0; */
     display: flex;
     justify-content: center;
-    justify-content: space-between;
+    justify-content: center;
+    flex-direction: row;
     font-size: 1.3rem;
     gap: 20px;
     padding: 5px;
-}
-
-.type-btn {
-    width: 25%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
 }
 
 .note-add button {
@@ -63,4 +57,16 @@
 
 .note-add button:hover {
     background-color: #f5f7f7;
+}
+
+@media (max-width: 860px) {
+    .note-add {
+        width: 600px;
+    }
+}
+
+@media (max-width: 680px) {
+    .note-add {
+        width: 95%;
+    }
 }
