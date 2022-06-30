@@ -7,7 +7,7 @@ export default {
     <div class="email-preview" @click="selectEmail(email)">
 
     <div class="start-preview ">
-       <div :class="{'star-active' : email.isStared , 'star-preview' : !email.isStared }" 
+       <div title="make as start" :class="{'star-active' : email.isStared , 'star-preview' : !email.isStared }" 
        class="symbol" @click.stop="toggleMode('star',email.id)"
        ></div>
     </div>

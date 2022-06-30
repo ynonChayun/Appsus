@@ -9,6 +9,7 @@ export const emailService = {
     getEmailsToDisplay,
     toggleMode,
     addComposeEmail,
+    getEmptyEmail,
 }
 
 const EMAIL_KEY = 'emailDB'
@@ -56,9 +57,11 @@ function getEmailsToDisplay() {
     return query().then(
         emails => {
             if (filter.status !== 'All') {
-                console.log('ho');
                 if (filter.status === 'Starred') emails = emails.filter(email => email.isStared)
                 else emails = emails.filter(email => email.status === filter.status)
+            }
+            if(filter.status === 'All'){
+                emails = emails.filter(email => email.status !== 'Trash')
             }
 
             if (!filter.txt) return emails
@@ -80,11 +83,11 @@ function getEmailsToDisplay() {
 
 function _createEmails() {
     let emails = []
-    for (var i = 0; i < 20; i++)emails.unshift(_createEmail())
+    for (var i = 0; i < 40; i++)emails.unshift(_createEmail())
     return emails
 }
 
-function _createEmail(isRandEmail = true, to, subject, body) {
+function _createEmail(isRandEmail = true, id, to, subject, body, status) {
 
     if (isRandEmail) return {
         id: utilService.makeId(),
@@ -98,22 +101,34 @@ function _createEmail(isRandEmail = true, to, subject, body) {
         from: utilService.randName()
     }
 
-    return {
+}
+
+function getEmptyEmail() {
+    const newEmail =  {
         id: utilService.makeId(),
-        subject,
-        body,
+        subject: '',
+        body: '',
         isRead: false,
         sentAt: Date.now(),
-        to,
-        status: 'Sent',//Inbox/Sent/Trash/Draft
+        to: '',
+        status: 'Drafts',//Inbox/Sent/Trash/Draft
         isStared: false,
         from: 'Me'
     }
+
+    return Promise.resolve(newEmail)
 }
 
-function addComposeEmail({ to, subject, body }) {
-    const newEmail = _createEmail(false, to, subject, body)
-    return storageService.post(EMAIL_KEY, newEmail).then(newEntiti => getEmailsToDisplay())
+function addComposeEmail(email) {
+return email.then(email => {
+    return storageService.get(EMAIL_KEY, email.id)
+    .then( res => {
+       if(!res)  return storageService.post(EMAIL_KEY, email).then(newEntiti => getEmailsToDisplay())
+       
+       return storageService.put(EMAIL_KEY, email).then(newEntiti => getEmailsToDisplay())
+     }
+    )
+})
 }
 
 const loggedinUser = {

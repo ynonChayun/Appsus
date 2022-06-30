@@ -121,22 +121,6 @@ main .subject-details {
 
 }
 
-.star{
-    background-image: url(https://www.gstatic.com/images/icons/material/system/1x/star_border_black_20dp.png);
-    background-repeat: no-repeat;
-    height: 4rem;
-    width: 4rem;
-    opacity: .5;
-    margin-inline-start: 15px;
-    background-size:30px;
-    position: relative;
-    bottom: .5rem;
-    cursor: pointer;
-}
-.star:hover{
-opacity: .9;
-}
-
 .time-and-star{
     display: flex;
     align-items: start;

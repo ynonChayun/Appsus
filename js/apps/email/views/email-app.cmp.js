@@ -41,11 +41,8 @@ export default {
         toggleMode(action) {
             emailService.toggleMode(action).then(emails => this.emails = emails)
         },
-        addNewEmail(emailContent) {
-            emailService.addComposeEmail(emailContent).then(emails => {
+        addedNewEmail(emails) {
                 this.emails = emails
-                console.log(emails);
-            })
         },
         searchEmail(txt) {
             emailFilter.setTxt(txt)
@@ -68,7 +65,7 @@ export default {
     created() {
         this.setNewEmails()
         eventBus.on('toggleMode', this.toggleMode)
-        eventBus.on('addNewEmail', this.addNewEmail)
+        eventBus.on('addedNewEmail', this.addedNewEmail)
         eventBus.on('searchEmail', this.searchEmail)
         eventBus.on('backToList', this.backToList)
         eventBus.on('selectEmail', this.selectEmail)

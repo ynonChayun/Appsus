@@ -20,10 +20,12 @@ function get(entityType, entityId) {
 }
 
 function post(entityType, newEntity) {
-    newEntity.id = _makeId()
+ 
     return query(entityType)
         .then(entities => {
+            console.log(entities);
             entities.unshift(newEntity);
+            console.log(entities);
             save(entityType, entities)
             return newEntity;
         })

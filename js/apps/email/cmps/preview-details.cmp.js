@@ -9,20 +9,22 @@ export default {
 
 <div class="preview-details-symbols">
     <!-- back symbol -->
+    <div class="back" title="back to list">
         <svg class="back" @click="backToList" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 477.175 477.175" style="enable-background:new 0 0 477.175 477.175;" xml:space="preserve">
         <g>
 	<path d="M145.188,238.575l215.5-215.5c5.3-5.3,5.3-13.8,0-19.1s-13.8-5.3-19.1,0l-225.1,225.1c-5.3,5.3-5.3,13.8,0,19.1l225.1,225   c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1L145.188,238.575z"/>
     </g>
     </svg>
+    </div>
 
     <!-- archive symbol -->
         <svg class="archive" xmlns="http://www.w3.org/2000/svg" width="752pt" height="752pt" version="1.1" viewBox="0 0 752 752">
     <path d="m375.85 181.54c-3.793 0.039063-7.4141 1.5938-10.055 4.3164-2.6406 2.7227-4.082 6.3906-4.0039 10.184v137.93l-42.473-39.516c-2.793-2.6289-6.5273-4.0156-10.359-3.8477-5.7461 0.26953-10.758 3.9766-12.703 9.3867-1.9453 5.4141-0.4375 11.465 3.8242 15.328l66.301 61.566c5.4375 5 13.801 5 19.238 0l66.301-61.566c2.9883-2.4922 4.8242-6.1016 5.0781-9.9844 0.25391-3.8828-1.0977-7.6992-3.7344-10.559s-6.332-4.5117-10.223-4.5742c-3.8867-0.0625-7.6328 1.4727-10.359 4.25l-42.477 39.516v-137.93c0.082031-3.8438-1.3984-7.5547-4.1055-10.289-2.707-2.7344-6.4023-4.2539-10.25-4.2109zm-86.129 146.96c-1.2695 0.12891-2.5156 0.42578-3.7031 0.88672l-66.301 23.68c-2.2109 0.78516-4.1953 2.1094-5.7695 3.8477l-47.359 52.094c-3.2539 3.5625-4.4766 8.5312-3.2539 13.195 1.2266 4.6641 4.7383 8.3906 9.3203 9.8906l37.594 12.582v63.934c0.03125 6.1641 4.0352 11.602 9.9141 13.465l151.55 47.359c2.793 0.88672 5.7891 0.88672 8.582 0l151.55-47.359c5.875-1.8633 9.8828-7.3008 9.9141-13.465v-23.68c0.054688-3.8047-1.418-7.4688-4.0898-10.176-2.668-2.7109-6.3125-4.2344-10.117-4.2344s-7.4492 1.5234-10.117 4.2344c-2.6719 2.707-4.1445 6.3711-4.0898 10.176v13.172l-123.13 38.477v-78.289l17.465 21.312c3.6914 4.5586 9.8047 6.3828 15.391 4.5859l156.28-52.094c4.5859-1.5 8.0938-5.2266 9.3203-9.8906 1.2266-4.6641 0.003907-9.6328-3.25-13.195l-47.359-52.094c-1.5781-1.7383-3.5586-3.0625-5.7734-3.8477l-66.301-23.68c-3.5703-1.3438-7.5352-1.1914-10.996 0.41797-3.4609 1.6133-6.125 4.5469-7.3984 8.1445-1.2734 3.6016-1.043 7.5586 0.63672 10.988 1.6758 3.4258 4.6641 6.0352 8.2891 7.2383l26.195 9.3203-106.71 33.449-106.7-33.449 26.195-9.3203c6.9453-2.207 11.098-9.3125 9.6094-16.445-1.4883-7.1328-8.1328-11.984-15.379-11.23zm-60.828 54.312 125.95 39.219-26.195 32.113-126.39-42.027zm294.21 0 26.637 29.305-126.39 42.027-26.195-32.113zm-284.45 71.332 90.273 30.043c5.5859 1.7969 11.703-0.027344 15.395-4.5859l17.461-21.312v78.289l-123.13-38.477z"/>
     </svg>
 
-    <div class="Trash"></div>
+    <div class="Trash" @click="taggleMode('Trash',email.id)"></div>
 
-        <svg class="copy" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+        <svg class="copy" @click="copyText" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
         <g>
 	    <g>
 		<path d="M509.116,189.867l-145.067-128c-1.741-1.536-3.883-2.227-6.101-2.116H307.2V8.533c0-4.719-3.823-8.533-8.533-8.533H8.533    C3.823,0,0,3.814,0,8.533V435.2c0,4.719,3.823,8.533,8.533,8.533L128,443.742v59.725c0,4.719,3.823,8.533,8.533,8.533h366.933    c4.71,0,8.533-3.814,8.533-8.533v-307.2C512,193.818,510.95,191.488,509.116,189.867z M366.933,87.177l113.963,100.557H366.933    V87.177z M128,68.267v358.409l-110.933-0.009v-409.6h273.067v42.692l-152.841,0.009C132.446,59.255,128,63.292,128,68.267z     M494.933,494.933H145.067v-59.264c0.009-0.154,0.009-0.299,0.009-0.461V76.834l204.792-0.017v119.45    c0,2.27,0.896,4.437,2.5,6.033c1.604,1.596,3.772,2.5,6.033,2.5h136.533V494.933z"/>
@@ -49,7 +51,8 @@ export default {
             <span class="from">{{email.from}}</span>
             <div class="time-and-star">
             <span class="time">{{getFormattedTime}}</span>
-            <div class="star"></div>
+            <div :class="{'star-active' : email.isStared , 'star-preview' : !email.isStared }" 
+             @click="taggleMode('Starred',email.id)"></div>
             </div>
         </div>
         <div class="user-logo-container">
@@ -70,9 +73,12 @@ export default {
          </section>
 `,
     data() {
-        return {};
+        return {
+            isStar: false
+        };
     },
     computed: {
+
         getSubject() {
             return this.email.subject || '(no subject)'
         },
@@ -91,13 +97,27 @@ export default {
 
             time = date + ', ' + month + ', ' + year + ', ' + hour + ':' + min
             return time;
-        }
+        },
+
     },
     components: {
     },
     methods: {
-        backToList(){
+        backToList() {
             eventBus.emit('backToList')
+        },
+        taggleMode(mode, id) {
+            this.email.isStared = !this.email.isStared
+            eventBus.emit('toggleMode', { mode, id });
+            if (mode === 'Trash') eventBus.emit('backToList');
+
+        },
+        copyText(){
+            navigator.clipboard.writeText(
+                'to: '+ this.email.to+
+                ' from: '+ this.email.from+
+                ' subject: '+ this.email.subject+
+                ' body: '+ this.email.body)
         }
     },
     created() {
