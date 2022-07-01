@@ -7,7 +7,7 @@ export default {
     template: `
         <header>
                 <div class="logo-and-filter">
-                    <div class="logo"><img src="/imgs/logo.png" class="logo-img">&nbsp;<span>{{currPageTxt}}</span></div>
+                    <div class="logo"><img src="./imgs/logo.png" class="logo-img">&nbsp;<span>{{currPageTxt}}</span></div>
                      <email-filter v-if='isEmailPage'/>
                      <book-filter v-if='isBookPage'/>
                 </div>
@@ -22,7 +22,7 @@ export default {
     data() {
         return {
             isEmailPage: false,
-            isBookPage : true,
+            isBookPage: true,
             isMenuOpen: false,
             currPageTxt: 'home'
         };
