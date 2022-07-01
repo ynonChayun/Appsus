@@ -1,4 +1,3 @@
-
 import { eventBus } from "../services/eventBus-service.js"
 
 export default {
@@ -32,17 +31,17 @@ export default {
             modes: ['Trash', 'Starred']
         };
     },
-    components: {
-    },
+    components: {},
     methods: {
         toggleMode(mode, id) {
             eventBus.emit('toggleMode', { mode, id });
         },
-        selectEmail(email){
+        selectEmail(email) {
             eventBus.emit('selectEmail', email)
         }
 
-    }, computed: {
+    },
+    computed: {
         getFormatedTime() {
             const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
@@ -61,8 +60,6 @@ export default {
             else return date + ' ' + month
         }
     },
-    created() {
-    },
-    unmounted() {
-    },
+    created() {},
+    unmounted() {},
 };

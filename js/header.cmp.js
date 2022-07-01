@@ -5,7 +5,7 @@ export default {
     template: `
         <header>
                 <div class="logo-and-filter">
-                    <div class="logo" ><img src="/imgs/logo.png" class="logo-img">&nbsp;mail</div>
+                    <div class="logo"><img src="/imgs/logo.png" class="logo-img">&nbsp;<span>{{currPageTxt}}</span></div>
                      <email-filter v-if='isEmailPage'/>
                 </div>
             
@@ -18,8 +18,9 @@ export default {
 `,
     data() {
         return {
-            isEmailPage:false,
+            isEmailPage: false,
             isMenuOpen: false,
+            currPageTxt: 'home'
         };
     },
     components: {
@@ -27,19 +28,17 @@ export default {
         mainNav,
     },
     methods: {
-        showFilter(){
-            console.log('yes');
-            this.isEmailPage = true
-            console.log(this.isEmailPage);
-        },
-        offFilter(){
-            console.log(this.isEmailPage);
-            this.isEmailPage = false
-        },
+        setCurrPage(txt) {
+            this.currPageTxt = txt
+            if (txt === "mail") {
+                this.isEmailPage = true
+            } else {
+                this.isEmailPage = false
+            }
+        }
     },
     created() {
-        eventBus.on('showFilter',this.showFilter)
-        eventBus.on('offFilter',this.offFilter)
+        eventBus.on('currPage', this.setCurrPage)
     },
     unmounted() {},
 };

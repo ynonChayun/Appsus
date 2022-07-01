@@ -1,13 +1,12 @@
 export default {
     template: `
     <section>
-        <!-- <router-link to="/keep">go to keep</router-link>
-        <router-link to="/mail">go to mail</router-link> -->
         <div class="my-body">
         <section class="main-grid">
         <article class="venue">
             <h3>A bit about our email pro, Ynon Chayun.</h3>
             <p>A very skilled email sender</p>
+            <img class="home-page-img" src="imgs/postman.png">
         </article>
         <article class="venue">
             <h3>Come visit our book shop</h3>
@@ -33,22 +32,22 @@ export default {
 
         <article class="venue">
             <h3>A bit about our notes master, Yuval Vaknin Levi</h3>
-            <p>Lorem ipsum dolor sit amet amet consectetur adipisicing.</p>
+            <p>The best notes writer in the middle east</p>
+            <img class="home-page-img" src="imgs/writer.png">
         </article>
         <article class="venue">
-            <h3>Metropolitan Opera</h3>
-            <p>Lorem ipsum sit amet consectetur adipisicing.</p>
-            <p class="date">November 3 &middot; 8:30pm</p>
+            <h3>Go share this fantastic website with your friends.</h3>
+            <img @click="copyLink" style="cursor: pointer" class="home-page-img" src="imgs/link.png">
         </article>
         <article class="venue">
-            <h3>Broadway Dance Center</h3>
-            <p>Lorem ipsum dolor consectetur adipisicing.</p>
-            <p class="date">November 5 &middot; 8pm</p>
+            <h3>You made it all the way down here, right?</h3>
+            <p>I assume you really enjoy the design of our home page.</p>
         </article>
         <article class="venue">
-            <h3>The Frye Company</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-            <p class="date">November 6 &middot; 7pm</p>
+            <h3>Fun facts:</h3>
+            <p>Almost 2.7 million emails are sent per second</p>
+            <p>There are around 130 million published books.</p>
+            <p>Notetaking is directly related to academic achievement</p>
         </article>
     </section>
         </div>
@@ -58,7 +57,12 @@ export default {
         return {};
     },
     created() {},
-    methods: {},
+    methods: {
+        copyLink() {
+            const url = window.location.href
+            navigator.clipboard.writeText(url)
+        },
+    },
     computed: {},
     unmounted() {},
 };

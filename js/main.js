@@ -24,15 +24,19 @@ const options = {
     watch: {
         '$route.params': {
             handler() {
-                
-               if(this.$route.fullPath === '/mail'){eventBus.emit('showFilter')
-               console.log('wow');
-            }
-               else eventBus.emit('offFilter')
+
+                if (this.$route.fullPath === '/mail') {
+                    eventBus.emit('currPage', 'mail')
+                } else if (this.$route.fullPath === '/keep') {
+                    eventBus.emit('currPage', 'keep')
+                } else if (this.$route.fullPath === '/') {
+                    eventBus.emit('currPage', 'home')
+                } else eventBus.emit('offFilter')
             },
             immediate: true
         }
-}};
+    }
+};
 
 const app = Vue.createApp(options);
 app.use(router)

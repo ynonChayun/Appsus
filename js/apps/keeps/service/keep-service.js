@@ -91,7 +91,7 @@ function _createExampleNotes() {
                 txt: 'Hi everyone!'
             },
             style: {
-                backgroundColor: '#b32850',
+                backgroundColor: '#f28b82',
             }
         },
         {
@@ -100,11 +100,11 @@ function _createExampleNotes() {
             noteType: 'txt',
             isPinned: false,
             info: {
-                title: 'Third Note',
+                title: '',
                 img: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
             },
             style: {
-                backgroundColor: '#3b8beb',
+                backgroundColor: '#fbbc04',
             }
         },
         {
@@ -113,15 +113,15 @@ function _createExampleNotes() {
             noteType: 'todos',
             isPinned: false,
             info: {
-                title: 'groceries:',
+                title: 'Apps:',
                 todos: [
-                    { txt: 'milk', isComplete: true, doneAt: null },
-                    { txt: 'toothpaste', isComplete: false, doneAt: 187111111 },
-                    { txt: 'bamba', isComplete: false, doneAt: 187111 }
+                    { txt: 'Mail', isComplete: true, doneAt: null },
+                    { txt: 'Keep', isComplete: false, doneAt: 187111111 },
+                    { txt: 'Book', isComplete: false, doneAt: 187111 }
                 ]
             },
             style: {
-                backgroundColor: '#e7e3d4'
+                backgroundColor: '#fff475'
             }
         },
         {
@@ -130,11 +130,11 @@ function _createExampleNotes() {
             noteType: 'txt',
             isPinned: false,
             info: {
-                title: 'Third Note',
+                title: 'Awesome',
                 img: 'https://images.unsplash.com/photo-1626025437642-0b05076ca301?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=534&q=80'
             },
             style: {
-                backgroundColor: '#c4dbf6',
+                backgroundColor: '#a7ffeb',
             }
         },
         {
@@ -143,11 +143,11 @@ function _createExampleNotes() {
             noteType: 'txt',
             isPinned: false,
             info: {
-                title: 'Third Note',
-                img: 'https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+                title: '',
+                img: 'https://media1.giphy.com/media/QpVUMRUJGokfqXyfa1/200.gif'
             },
             style: {
-                backgroundColor: '#41b3a3',
+                backgroundColor: '#cbf0f8',
             }
         },
         {
@@ -156,11 +156,11 @@ function _createExampleNotes() {
             noteType: 'txt',
             isPinned: false,
             info: {
-                title: 'Third Note',
+                title: '',
                 img: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
             },
             style: {
-                backgroundColor: '#b32850',
+                backgroundColor: '#d7aefb',
             }
         },
         {
@@ -177,7 +177,7 @@ function _createExampleNotes() {
                 ]
             },
             style: {
-                backgroundColor: '#3bbeb'
+                backgroundColor: '#aecbfa'
             }
         },
         {
@@ -186,11 +186,11 @@ function _createExampleNotes() {
             noteType: 'txt',
             isPinned: true,
             info: {
-                title: 'Try sOmRHIN',
-                img: 'https://images.unsplash.com/photo-1626025437642-0b05076ca301?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=534&q=80'
+                title: 'Why?',
+                img: 'https://media.wired.com/photos/59326d5344db296121d6aee9/master/pass/8552.gif'
             },
             style: {
-                backgroundColor: '#8590aa',
+                backgroundColor: '#e8eaed',
             }
         },
         {
@@ -199,11 +199,11 @@ function _createExampleNotes() {
             noteType: 'txt',
             isPinned: false,
             info: {
-                title: 'Third Note',
-                img: 'https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+                title: 'Cool',
+                img: 'https://c.tenor.com/kqixRX0zKOcAAAAd/cool.gif'
             },
             style: {
-                backgroundColor: '#c4dbf6',
+                backgroundColor: '#aecbfa',
             }
         },
 
