@@ -8,25 +8,33 @@ export default {
 
             <div class="stars-date">
                 <div class="rate">
-                <span v-for="num in 5" :class="{star: num <= review.rate}" @click="setRating(num)">★</span>
+                <span v-for="num in 5" :class="{star: num <= review.rate}" @click="setRating(num)"><i class="far fa-star"></i></span>
                 </div>
-                <input type="date" ref="date" class="date-input" v-model="review.readingDate">
+                <input required type="date" ref="date" class="date-input" v-model="review.readingDate">
             </div>
-            <input type="text" v-model="review.name" ref="userName" placeholder="Type your name" class="user-name">
-            <textarea v-model="review.bookReview" placeholder="Type your review."class="free-txt" cols="30" rows="5"></textarea>
-            <button type="submit" class="btn">Submit</button>
+            <div class="review-input">
+
+                <input required type="text" v-model="review.name" ref="userName" placeholder="Type your name" class="user-name">
+                <textarea required v-model="review.bookReview" placeholder="Type your review."class="free-txt" cols="20" rows="5"></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
         </form>
     </section>
 
-    <section v-if="book" class="review-list">
-        BOOK REVIEW
-        <ul v-if="book.reviews">
-            <li v-for="review in book.reviews">
-                <button @click="remove(review.id)">X</button>
-                <pre>{{review}}</pre>
+    <section v-if="book" class="reviews-container">
+        <ul v-if="book.reviews" class="book-reviews">
+            <li v-for="review in book.reviews" class="review">
+            <p class="name">{{review.name}}</p> <span>{{review.readingDate}}</span>
+            <div class="rate">
+                <span>{{review.rate}}/5 <i class="far fa-star star"></i></span>
+            </div>
+            <div class="review-txt">
+            <p>{{review.bookReview}}</p>
+        </div>
+        <button @click="remove(review.id)" class="close-btn">X</button>
             </li>
         </ul>
-    </section>
+    </section> 
     `,
     data() {
         return {

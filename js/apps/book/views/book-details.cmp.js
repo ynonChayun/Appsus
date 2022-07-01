@@ -40,42 +40,7 @@ export default {
             </div>
         </div>
         <review-add />
-
     </section>
-    <!-- <section v-if="book" class="book-details">
-        <div class="img-holder">
-            <div v-if="book.listPrice.isOnSale" class="sale-sign">
-                <img src="../../assets/icons/saleTag.svg" alt="" srcset="">
-            </div>
-            <img :src="bookImgUrl" alt="" srcset="">
-        </div>
-        <div class="book-info">
-            <table>
-                <tr><td>Title</td><td>{{book.title}}</td></tr>
-                <tr><td>ID</td><td>{{book.id}}</td></tr>
-                <tr><td>Subtitle</td><td>{{book.subtitle}}</td></tr>
-                <tr><td>language</td><td>{{book.language}}</td></tr>
-                <tr><td>Published Date</td><td>{{formatedPublishedDate}}</td></tr>
-                <tr><td>Page Count</td><td>{{formatedPageCount}}</td></tr>
-                <tr><td>Description</td><td>{{book.description}}</td></tr>
-                <tr><td>price</td><td :class="priceSytle">{{formatedPrice}}</td></tr>
-            </table>
-            <h4>Author</h4>
-            <ul>
-                <li v-for="author in book.authors">{{author}}</li>
-            </ul>
-            <h4>category</h4>
-            <ul>
-                <li v-for="category in book.categories">{{category}}</li>
-            </ul>
-        </div>
-
-
-    </section>
-
-    <section class="book-reviwes">
-        <review-add />
-    </section> -->
     `,
     data() {
         return {

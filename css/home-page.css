@@ -47,10 +47,6 @@ article>p {
     font-size: .7em;
 }
 
-.date {
-    color: burlywood;
-}
-
 article:nth-child(2) {
     grid-row-start: 1;
     grid-column-start: 1;
