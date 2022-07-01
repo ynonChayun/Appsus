@@ -31,3 +31,8 @@
 @import './apps/keep/keep-add.css';
 @import './apps/keep/keep-menu.css';
 @import './apps/keep/keep-color-palette.css';
+
+/* book */
+
+@import './apps/book/book-details.css';
+@import './apps/book/book-review.css';
