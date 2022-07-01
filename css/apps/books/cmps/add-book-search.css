@@ -1,0 +1,35 @@
+.add-book-search {
+    display: flex;
+    height: 2.5rem;
+    background-color: #f1f3f4;
+    border-radius: 8px;
+    flex-grow: 1;
+    align-items: center;
+}
+
+.add-book-search input {
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+    font-family: roboto;
+    flex-grow: 1;
+    color: #3c4043;
+}
+
+.add-book-search input:focus {
+    outline: none;
+}
+
+.add-book-search svg {
+    width: 24px;
+    height: 24px;
+    margin: .5rem;
+    cursor: pointer;
+}
+
+.add-book-active{
+    background-color: #fff;
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+    transition: box-shadow .08s linear, min-width .15s cubic-bezier(0.4, 0, 0.2, 1);
+}

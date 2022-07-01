@@ -1,6 +1,8 @@
 import { bookService } from '../service/book-service.js'
 
+import addModal from '../views/book-add.cmp.js'
 import bookList from "../cmps/book-list.cmp.js"
+
 import { eventBus } from '../../email/services/eventBus-service.js';
 
 
@@ -9,19 +11,21 @@ export default {
         <section class="book-app">
             
         <div class="add-book-container">
-        <router-link to='/book/bookAdd' class="add-book-txt" >
-        <div class="add-book">
+        <div class="add-book-txt" >
+        <div @click ="setAddBookModal" class="add-book">
             <div class="compose-img"></div> 
-       <span class="add-book-txt"> Add Book</span></router-link>
+       <span class="add-book-txt"> Add Book</span></div>
     </div>
         
     </div>
 
+             <add-modal/>
             <book-list :books="booksToShow" />
         </section>
             `,
     components: {
         bookList,
+        addModal
     },
     data() {
         return {
@@ -37,6 +41,9 @@ export default {
     methods: {
         setFilter(filter) {
             this.filterBy = filter
+        },
+        setAddBookModal(){
+            this.isAddModal = !this.isAddModal
         }
     },
     computed: {

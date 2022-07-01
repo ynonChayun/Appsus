@@ -1,10 +1,13 @@
+import bookPreview from "./book-preview.cmp.js"
+
 export default {
-    props: ["results"],
+    props: ["books"],
     template: `
     <section>
           <ul>
-              <li v-for="result in results" :key="result.id">
-                  <p>{{result.title}}  <button @click="addBook(result.id)">ADD BOOK</button></p>
+              <li v-for="book in books" :key="book.id">
+                  <p>{{book.title}}  <button @click="addBook(book.id)">ADD BOOK</button></p>
+                  <book-preview :book="{book,mode:'search'}"/>
               </li>
           </ul>
       </section>
@@ -15,10 +18,12 @@ export default {
     created() {},
     methods: {
         addBook(id) {
-            // console.log('id: ', id)
             this.$emit('bookAdded', id)
         }
     },
     computed: {},
     unmounted() {},
+    components:{
+        bookPreview
+    }
 };

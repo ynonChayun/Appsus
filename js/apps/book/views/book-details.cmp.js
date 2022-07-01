@@ -1,9 +1,48 @@
 import { bookService } from "../service/book-service.js";
 import reviewAdd from "../cmps/review-add.cmp.js";
+import longText from '../cmps/long-text.cmp.js'
+
 
 export default {
     template: `
-    <section v-if="book" class="book-details">
+    <section v-if="book" class="book-details-container">
+        <div class="book-details">
+                <div class="img-box">
+                  <img :src="bookImgUrl" alt="">
+                </div>
+
+                <div class="book-desc">
+                    <h2>{{ book.title }} <span class="price" :class="priceSytle">{{formatedPrice}}</span></h2>
+                    <p class="author">By <span v-for="author in book.authors">{{author}}</span></p>
+                    <h4>{{ book.subtitle }}</h4>
+                    <p class="bookDate">Published at: {{ formatedPublishedDate }} </p>
+                    
+                    <long-text :text="book.description"></long-text>
+                    
+                    <div class="more-details">
+                        <div>
+                            <span class="detail">{{ formatedPageCount }}</span>
+                            <span class="detail">{{ book.language }}</span>
+                        </div>
+                        <ul class="tags">
+                            <li v-for="category in book.categories ">
+                                <span class="tag">{{category}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="more-details">
+                    <!-- <router-link :to="'/book/' + prevBookId">Prev book</router-link>
+        <router-link :to="'/book/' + nextBookId">Next book</router-link>
+
+        <router-link class="info-btn" to="/book">back</router-link> -->
+                    </div>
+    
+            </div>
+        </div>
+        <review-add />
+
+    </section>
+    <!-- <section v-if="book" class="book-details">
         <div class="img-holder">
             <div v-if="book.listPrice.isOnSale" class="sale-sign">
                 <img src="../../assets/icons/saleTag.svg" alt="" srcset="">
@@ -31,15 +70,12 @@ export default {
             </ul>
         </div>
 
-        <router-link :to="'/book/' + prevBookId">Prev book</router-link>
-        <router-link :to="'/book/' + nextBookId">Next book</router-link>
 
-        <router-link class="info-btn" to="/book">back</router-link>
     </section>
 
     <section class="book-reviwes">
         <review-add />
-    </section>
+    </section> -->
     `,
     data() {
         return {
@@ -51,7 +87,8 @@ export default {
         }
     },
     components: {
-        reviewAdd
+        reviewAdd,
+        longText
     },
     computed: {
         bookImgUrl() {

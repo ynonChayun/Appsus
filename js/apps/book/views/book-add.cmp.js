@@ -5,14 +5,17 @@ import addBookSearchList from "../cmps/add-book-search-list.cmp.js";
 
 export default {
     template: `
-    <section>
-    <router-link to="/book"  > Back to book shop</router-link> 
-           <h1>Find and Add new Books:</h1>
+    <section class="book-add" v-if="false">
+    <header>Add Book <div class="close-compose">x</div></header>
+        <div class="book-add-content">
            <add-book-search @searchNewBook="onSearchNewBook"/>
            <add-book-search-list v-if="searchedResults"
-            :results="searchedResults" @bookAdded="onAddBook"/>
-
-    </section>`,
+            :books="searchedResults" @bookAdded="onAddBook"/>
+</div>
+    </section>`
+    
+    
+    ,
     components: {
         addBookSearch,
         addBookSearchList

@@ -1,0 +1,64 @@
+.book-details {
+    /* position: relative; */
+    margin-bottom: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.book-details img {
+    margin-inline-end: 1.2rem;
+}
+
+.book-details h2 {
+    font-size: 2.4rem;
+}
+
+.book-details h4 {
+    margin-block-end: 0.2em;
+}
+
+.book-desc {
+    /* position: relative; */
+}
+
+.more-details {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-block-start: 0.2em;
+}
+
+.book-details .price {
+    font-size: 2rem;
+}
+
+.book-details .author {
+    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
+}
+
+.book-details .bookDate {
+    margin-block-end: 0.2em;
+}
+
+.more-details .detail {
+    margin-inline-end: 1rem;
+    padding: 3px;
+    margin-inline-end: 0.2rem;
+}
+
+.more-details .tags {
+    margin: 0;
+    padding: 0;
+    padding: 3px;
+    margin-inline-end: 0.2rem;
+    list-style-type: none;
+    display: flex;
+}
+
+.more-details .tag {
+    padding: 3px;
+    background-color: #cbf0f8;
+    margin-inline-end: 0.2rem;
+}

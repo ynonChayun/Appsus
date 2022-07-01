@@ -3,40 +3,18 @@ import { eventBus } from "../service/eventBus-service.js"
 
 export default {
     template: `
-    <section class="book-review-form">
-        <pre>{{review}}</pre>
+    <section class="review-add">
         <form @submit.prevent="add">
-            <table>
-                <tr>
-                    <td>Full Name</td>
-                    <td>
-                        <input ref="input" type="text" v-model="review.rederName" 
-                        placeholder="Full Name" required/>
-                    </td>
-                </tr>
 
-                <tr>
-                    <td>Book Rate</td>
-                    <td>
-                        <div class="rate">
-                            <span v-for="num in 5" :class="{star: num <= review.rate}" @click="setRating(num)">★</span>
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>Reading Date</td>
-                    <td><input v-model="review.readingDate" type="date" name="ReadingDate" id="ReadingDate" required/></td>
-                </tr>
-
-                <tr>
-                    <td>Your Review</td>
-                    <td>
-                    <textarea v-model="review.bookReview" id="bookReview" name="bookReview" rows="4" cols="50" required></textarea>
-                    </td>
-                </tr>
-            </table>
-            <button>add</button>
+            <div class="stars-date">
+                <div class="rate">
+                <span v-for="num in 5" :class="{star: num <= review.rate}" @click="setRating(num)">★</span>
+                </div>
+                <input type="date" ref="date" class="date-input" v-model="review.readingDate">
+            </div>
+            <input type="text" v-model="review.name" ref="userName" placeholder="Type your name" class="user-name">
+            <textarea v-model="review.bookReview" placeholder="Type your review."class="free-txt" cols="30" rows="5"></textarea>
+            <button type="submit" class="btn">Submit</button>
         </form>
     </section>
 
@@ -54,21 +32,17 @@ export default {
         return {
             book: null,
             review: {
-                rederName: '',
-                rate: '',
+                name: 'Book Reader',
+                rate: 0,
                 readingDate: '',
-                bookReview: ''
-            }
+                bookReview: '',
+            },
         }
     },
     created() {
         const { bookId } = this.$route.params
         bookService.get(bookId)
             .then(book => this.book = book)
-    },
-    mounted() {
-        console.log(this.$refs);
-        this.$refs.input.focus()
     },
     methods: {
         setRating(val) {
