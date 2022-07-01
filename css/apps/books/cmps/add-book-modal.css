@@ -1,0 +1,27 @@
+.book-add{
+    background-color:white ;
+    position: fixed;
+    top: 61%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    margin: auto;
+    max-width: 600px;
+    height: 500px;
+    box-shadow: 0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%), 0px 5px 5px -3px rgb(0 0 0 / 20%);
+    border-radius: 8px;
+}
+.book-add-content{
+    padding: 25px;
+    height: 100%;
+    
+}
+.book-add header{
+    height: 20px;
+    background-color: #404040;
+    color: white;
+    border-radius: 8px 8px 0 0;
+    letter-spacing: .2px;
+    font-family: roboto-bold;
+    padding-inline: 1rem;
+}

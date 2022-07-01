@@ -1,19 +1,31 @@
 import { bookService } from '../service/book-service.js'
-import bookFilter from "../cmps/book-filter.cmp.js"
+
+import addModal from '../views/book-add.cmp.js'
 import bookList from "../cmps/book-list.cmp.js"
+
+import { eventBus } from '../../email/services/eventBus-service.js';
 
 
 export default {
     template: `
         <section class="book-app">
-            <book-filter @filtered="setFilter" />
-            <router-link to='/book/bookAdd'>Add Book</router-link>
+            
+        <div class="add-book-container">
+        <div class="add-book-txt" >
+        <div @click ="setAddBookModal" class="add-book">
+            <div class="compose-img"></div> 
+       <span class="add-book-txt"> Add Book</span></div>
+    </div>
+        
+    </div>
+
+             <add-modal/>
             <book-list :books="booksToShow" />
         </section>
             `,
     components: {
-        bookFilter,
         bookList,
+        addModal
     },
     data() {
         return {
@@ -24,10 +36,14 @@ export default {
     created() {
         bookService.query()
             .then(books => this.books = books)
+        eventBus.on('filtered', this.setFilter)
     },
     methods: {
         setFilter(filter) {
             this.filterBy = filter
+        },
+        setAddBookModal(){
+            this.isAddModal = !this.isAddModal
         }
     },
     computed: {
@@ -45,5 +61,5 @@ export default {
             return books
         },
     },
-    unmounted() {},
+    unmounted() { },
 };

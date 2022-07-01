@@ -6,10 +6,7 @@ export default {
     <section class="book-list">
         <ul>
             <li v-for="book in books" :key="book.id" class="book-preview-container">
-                <book-preview :book="book"/>
-                <div class="actions">
-                    <router-link class="info-btn" :to="'/book/'+book.id">Details</router-link>
-                </div>
+                    <router-link class="info-btn" :to="'/book/'+book.id"><book-preview :book="{book ,mode:'list'}"/></router-link>
             </li>
         </ul>
     </section>
