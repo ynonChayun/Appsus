@@ -1,18 +1,26 @@
 import { bookService } from '../service/book-service.js'
-import bookFilter from "../cmps/book-filter.cmp.js"
+
 import bookList from "../cmps/book-list.cmp.js"
+import { eventBus } from '../../email/services/eventBus-service.js';
 
 
 export default {
     template: `
         <section class="book-app">
-            <book-filter @filtered="setFilter" />
-            <router-link to='/book/bookAdd'>Add Book</router-link>
+            
+        <div class="add-book-container">
+        <router-link to='/book/bookAdd' class="add-book-txt" >
+        <div class="add-book">
+            <div class="compose-img"></div> 
+       <span class="add-book-txt"> Add Book</span></router-link>
+    </div>
+        
+    </div>
+
             <book-list :books="booksToShow" />
         </section>
             `,
     components: {
-        bookFilter,
         bookList,
     },
     data() {
@@ -24,6 +32,7 @@ export default {
     created() {
         bookService.query()
             .then(books => this.books = books)
+        eventBus.on('filtered', this.setFilter)
     },
     methods: {
         setFilter(filter) {
@@ -45,5 +54,5 @@ export default {
             return books
         },
     },
-    unmounted() {},
+    unmounted() { },
 };

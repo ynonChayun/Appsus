@@ -24,14 +24,7 @@ const options = {
     watch: {
         '$route.params': {
             handler() {
-
-                if (this.$route.fullPath === '/mail') {
-                    eventBus.emit('currPage', 'mail')
-                } else if (this.$route.fullPath === '/keep') {
-                    eventBus.emit('currPage', 'keep')
-                } else if (this.$route.fullPath === '/') {
-                    eventBus.emit('currPage', 'home')
-                } else eventBus.emit('offFilter')
+                eventBus.emit('currPage', this.$route.fullPath.substring(1))
             },
             immediate: true
         }
