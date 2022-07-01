@@ -25,35 +25,62 @@ export default {
     data() {
         return {
             emails: null,
-            selectedEmail:null
+            selectedEmail: null
         };
     },
     methods: {
-        setNewEmails() {
+        setNewEmails(levelFilter) {
             emailService.getEmailsToDisplay().then(emails => {
                 this.emails = emails
             })
         },
         setStatus(status) {
             emailFilter.setStatus(status)
+            emailFilter.setLevelFilter('light')
+            eventBus.emit('clearMultiFilter')
             this.setNewEmails()
         },
+        setMultiFilter(multiFilter) {
+            multiFilter.then(filter => {
+                let thereIs = false
+                for (var key in filter) {
+                    if (filter[key]) {
+                        thereIs = true
+                        break
+                    }
+                }
+                if (!thereIs)return 
+
+                emailFilter.setMultiFilter(multiFilter).then(
+                    res => {
+                        emailFilter.setLevelFilter('multi')
+                        this.setNewEmails()
+                }
+                    )
+            })
+        },
         toggleMode(action) {
-            emailService.toggleMode(action).then(emails => this.emails = emails)
+           
+            emailService.toggleMode(action).then(emails => {
+                this.emails = emails
+                if(!action.mode === 'star')  this.backToList()
+            })
         },
         addedNewEmail(emails) {
-                this.emails = emails
+            this.emails = emails
         },
         searchEmail(txt) {
             emailFilter.setTxt(txt)
+            emailFilter.setLevelFilter('light')
+            eventBus.emit('clearMultiFilter')
             this.setNewEmails()
         },
-        selectEmail(email){
+        selectEmail(email) {
             this.selectedEmail = email
         },
-        backToList(){
+        backToList() {
             this.selectedEmail = null
-        }
+        },
     },
     components: {
         emailSide,
@@ -69,7 +96,7 @@ export default {
         eventBus.on('searchEmail', this.searchEmail)
         eventBus.on('backToList', this.backToList)
         eventBus.on('selectEmail', this.selectEmail)
-
+        eventBus.on('setMultiFilter', this.setMultiFilter)
     },
     unmounted() { },
 };

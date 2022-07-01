@@ -38,7 +38,9 @@ export default {
             txtValue: null
         };
     },
-    created() {},
+    created() {
+       
+    },
     methods: {
         changeType(newType) {
             this.note.type = newType

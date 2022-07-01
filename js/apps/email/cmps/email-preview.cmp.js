@@ -4,9 +4,9 @@ import { eventBus } from "../services/eventBus-service.js"
 export default {
     props: ['email'],
     template: `
-    <div class="email-preview" @click="selectEmail(email)">
+    <div class="email-preview" @click="selectEmail(email)" :class="{'preview-active':email.isRead}">
 
-    <div class="start-preview ">
+    <div class="start-preview " >
        <div title="make as start" :class="{'star-active' : email.isStared , 'star-preview' : !email.isStared }" 
        class="symbol" @click.stop="toggleMode('star',email.id)"
        ></div>
@@ -18,11 +18,11 @@ export default {
         <div class="body">{{email.body}}</div>
         </div>
         
-        <div class="time-preview">{{getFormatedTime}}</div>
-        <div class="end-preview">
-            <div class="archive-email symbol"></div>
+        <div class="time-preview" :class="{'preview-active':email.isRead}">{{getFormatedTime}}</div>
+        <div class="end-preview" :class="{'preview-active':email.isRead}">
+            <div @click.stop="toggleMode('Archive',email.id)" class="archive-email symbol"></div>
             <div class="Trash trash-email symbol" @click.stop="toggleMode('Trash',email.id)"></div>
-            <div class="mark-read symbol"></div>
+            <div class="mark-read symbol" @click.stop="toggleMode('read', email.id)"></div>
         </div>
     </div>
 

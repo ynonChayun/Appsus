@@ -1,0 +1,111 @@
+.multi-filter {
+    position: absolute;
+    top: 53px;
+    background-color: #fff;
+    z-index: 1;
+    width: 50%;
+    font-size: .875rem;
+    letter-spacing: .2px;
+
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+    transition: box-shadow .08s linear, min-width .15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    color: #5f6368;
+}
+
+.form-container div {
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    line-height: 20px;
+    margin-bottom: 20px;
+    align-items: center;
+    font-family: 'roboto';
+}
+
+.form-container div input {
+    width: 100%;
+    max-width: 500px;
+    margin-inline-start: 1rem;
+    border: none;
+    border-bottom: .5px solid #eceff1;
+
+    box-shadow: inset 0 -1px 0 0 rgb(100 121 143 / 12%);
+    height: 20px;
+}
+
+.form-container div input:focus {
+    outline: none;
+    box-shadow: inset 0 -1px 0 0 #4285f4;
+}
+
+.form-container .date select {
+    width: 100%;
+    max-width: 230px;
+}
+.form-container select{
+    border: none;
+    border-bottom: .5px solid #eceff1;
+    height: 20px;
+}
+.form-container select:focus{
+    outline: none;
+    border: none;
+}
+
+.form-container select:hover{
+    background-color: #eceff1;
+}
+
+.form-container .date input{
+    width: 200px;
+}
+.form-container .date{
+    position: relative;
+    top: 5px;
+}
+.date span{
+    color: #5f6368;
+}
+
+button.search{
+    background-color: #1a73e8;
+    border: none;
+    height: 2.25rem;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover{
+        background-color: #297be6;
+        outline: 1px solid transparent;
+}
+
+.form-container .status{
+    display: flex;
+    justify-content: space-between;
+
+
+}
+.form-container .status select{
+    width: 100%;
+    max-width: 500px;
+    margin-inline-start: 1rem;
+    border: none;
+    border-bottom: .5px solid #eceff1;
+    box-shadow: inset 0 -1px 0 0 rgb(100 121 143 / 12%);
+    height: 20px;
+}
+
+select{
+    cursor: pointer;
+}
+.select-items{
+    cursor:pointer;
+}

@@ -3,7 +3,8 @@ export const utilService = {
     loadFromStorage,
     makeId,
     makeLorem,
-    randName
+    randName,
+    randStatus
 }
 
 function saveToStorage(key, value) {
@@ -37,8 +38,14 @@ function makeLorem(length = 10) {
 }
 
 function randName() {
-    const names = ["Yaron Biton", "Matan Crispel", "Third King Yuval Levi", "Inbar Tzvik", "Adam Bercovich", "Amir Inbar", "Rotem Bublil", "Dimaaa"]
+    const names = ["Yaron Biton", "Matan Crispel", "Third King Yuval Levi", "Inbar Tzvik", "Adam Bercovich", "Amir Inbar", "Rotem Bublil", "Dimaaa", "yagel ohayun", "joni baruch", 'mika kazanova', 'Alpha Whey','israel police',
+'MisterBit','Netflix']
 
     return names[Math.floor(Math.random() * names.length)]
 
+}
+
+function randStatus(){
+    const states = ['Inbox', 'Sent', 'Drafts', 'Trash', 'All']
+    return states[Math.floor(Math.random() * states.length)]
 }

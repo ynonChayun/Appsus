@@ -127,3 +127,8 @@
     opacity: 1;
     margin-inline: 15px;
 }
+
+
+.preview-active{
+    background-color: #f5f7f7 ;
+}

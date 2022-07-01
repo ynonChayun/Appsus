@@ -18,10 +18,10 @@ export default {
     </div>
 
     <!-- archive symbol -->
-        <svg class="archive" xmlns="http://www.w3.org/2000/svg" width="752pt" height="752pt" version="1.1" viewBox="0 0 752 752">
+        <svg class="archive" @click="taggleMode('Archive',email.id)" xmlns="http://www.w3.org/2000/svg" width="752pt" height="752pt" version="1.1" viewBox="0 0 752 752">
     <path d="m375.85 181.54c-3.793 0.039063-7.4141 1.5938-10.055 4.3164-2.6406 2.7227-4.082 6.3906-4.0039 10.184v137.93l-42.473-39.516c-2.793-2.6289-6.5273-4.0156-10.359-3.8477-5.7461 0.26953-10.758 3.9766-12.703 9.3867-1.9453 5.4141-0.4375 11.465 3.8242 15.328l66.301 61.566c5.4375 5 13.801 5 19.238 0l66.301-61.566c2.9883-2.4922 4.8242-6.1016 5.0781-9.9844 0.25391-3.8828-1.0977-7.6992-3.7344-10.559s-6.332-4.5117-10.223-4.5742c-3.8867-0.0625-7.6328 1.4727-10.359 4.25l-42.477 39.516v-137.93c0.082031-3.8438-1.3984-7.5547-4.1055-10.289-2.707-2.7344-6.4023-4.2539-10.25-4.2109zm-86.129 146.96c-1.2695 0.12891-2.5156 0.42578-3.7031 0.88672l-66.301 23.68c-2.2109 0.78516-4.1953 2.1094-5.7695 3.8477l-47.359 52.094c-3.2539 3.5625-4.4766 8.5312-3.2539 13.195 1.2266 4.6641 4.7383 8.3906 9.3203 9.8906l37.594 12.582v63.934c0.03125 6.1641 4.0352 11.602 9.9141 13.465l151.55 47.359c2.793 0.88672 5.7891 0.88672 8.582 0l151.55-47.359c5.875-1.8633 9.8828-7.3008 9.9141-13.465v-23.68c0.054688-3.8047-1.418-7.4688-4.0898-10.176-2.668-2.7109-6.3125-4.2344-10.117-4.2344s-7.4492 1.5234-10.117 4.2344c-2.6719 2.707-4.1445 6.3711-4.0898 10.176v13.172l-123.13 38.477v-78.289l17.465 21.312c3.6914 4.5586 9.8047 6.3828 15.391 4.5859l156.28-52.094c4.5859-1.5 8.0938-5.2266 9.3203-9.8906 1.2266-4.6641 0.003907-9.6328-3.25-13.195l-47.359-52.094c-1.5781-1.7383-3.5586-3.0625-5.7734-3.8477l-66.301-23.68c-3.5703-1.3438-7.5352-1.1914-10.996 0.41797-3.4609 1.6133-6.125 4.5469-7.3984 8.1445-1.2734 3.6016-1.043 7.5586 0.63672 10.988 1.6758 3.4258 4.6641 6.0352 8.2891 7.2383l26.195 9.3203-106.71 33.449-106.7-33.449 26.195-9.3203c6.9453-2.207 11.098-9.3125 9.6094-16.445-1.4883-7.1328-8.1328-11.984-15.379-11.23zm-60.828 54.312 125.95 39.219-26.195 32.113-126.39-42.027zm294.21 0 26.637 29.305-126.39 42.027-26.195-32.113zm-284.45 71.332 90.273 30.043c5.5859 1.7969 11.703-0.027344 15.395-4.5859l17.461-21.312v78.289l-123.13-38.477z"/>
     </svg>
-
+    
     <div class="Trash" @click="taggleMode('Trash',email.id)"></div>
 
         <svg class="copy" @click="copyText" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
@@ -31,13 +31,13 @@ export default {
 	    </g>
 
     </svg>
-
-        <svg class="inbox" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 58 58" style="enable-background:new 0 0 58 58;" xml:space="preserve">
+        <div title="inbox" >
+        <svg class="inbox" @click="taggleMode('Inbox',email.id)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 58 58" style="enable-background:new 0 0 58 58;" xml:space="preserve">
         <g>
         <path d="M21.707,24.293c-0.391-0.391-1.023-0.391-1.414,0s-0.391,1.023,0,1.414l7.999,7.999c0.001,0.001,0.001,0.001,0.002,0.002   L29,34.414l0.706-0.706c0.001-0.001,0.001-0.001,0.002-0.002l7.999-7.999c0.391-0.391,0.391-1.023,0-1.414s-1.023-0.391-1.414,0   L30,30.586V3c0-0.552-0.447-1-1-1s-1,0.448-1,1v27.586L21.707,24.293z"/>
         <path d="M57.981,32.676L57.53,32h-0.009l-3.583-5.381l-2.421-3.628l0.004-0.002L47.535,17H36v2h10.465l8.679,13H39v7H19v-7H2.856   l8.679-13H22v-2H10.465L0.431,32.031l-0.014,0.001L0,32.655v0.206v0.396v19.359C0,54.482,1.519,56,3.385,56h51.23   C56.481,56,58,54.482,58,52.616V33.239v-0.429l-0.014-0.036L57.981,32.676z"/>
         </g>
-
+        </div>
         </svg>
         </div>
 
@@ -52,7 +52,7 @@ export default {
             <div class="time-and-star">
             <span class="time">{{getFormattedTime}}</span>
             <div :class="{'star-active' : email.isStared , 'star-preview' : !email.isStared }" 
-             @click="taggleMode('Starred',email.id)"></div>
+             @click="taggleMode('star',email.id)"></div>
             </div>
         </div>
         <div class="user-logo-container">
@@ -107,9 +107,9 @@ export default {
             eventBus.emit('backToList')
         },
         taggleMode(mode, id) {
-            this.email.isStared = !this.email.isStared
+            if(mode === 'star')this.email.isStared = !this.email.isStared
             eventBus.emit('toggleMode', { mode, id });
-            if (mode === 'Trash') eventBus.emit('backToList');
+            if (mode !== 'star') eventBus.emit('backToList');
 
         },
         copyText(){
@@ -118,6 +118,10 @@ export default {
                 ' from: '+ this.email.from+
                 ' subject: '+ this.email.subject+
                 ' body: '+ this.email.body)
+        },
+        putToInbox(){
+            if(this.email.status === 'Inbox')eventBus.emit('backToList');
+            eventBus.emit('toggleMode', { mode:'Inbox', id:this.email.id });
         }
     },
     created() {
