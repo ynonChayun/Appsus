@@ -24,7 +24,21 @@ const options = {
     watch: {
         '$route.params': {
             handler() {
-                eventBus.emit('currPage', this.$route.fullPath.substring(1))
+                console.log('this.$route.fullPath: ', this.$route.fullPath)
+                if (this.$route.fullPath === '/mail') {
+                    eventBus.emit('currPage', 'mail')
+                } else if (this.$route.fullPath === '/keep') {
+                    eventBus.emit('currPage', 'keep')
+                } else if (this.$route.fullPath === '/') {
+                    eventBus.emit('currPage', 'home')
+                } else {
+                    eventBus.emit('currPage', 'book')
+                }
+
+                //    if(this.$route.fullPath === '/mail'){eventBus.emit('showFilter')
+                //    console.log('wow');
+                // }
+                //    else eventBus.emit('offFilter')
             },
             immediate: true
         }

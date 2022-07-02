@@ -7,11 +7,11 @@ import { eventBus } from "../../../services/eventBus-service.js";
 
 export default {
     template: `
-                <section class="keep-app">
-                    <keep-create class="container" @noteAdded="addNote"/>
-                    <keep-list class="container" :notes="notes"/>
-                </section>
-            `,
+    <section class="keep-app">
+        <keep-create class="container" @noteAdded="addNote"/>
+        <keep-list class="container" :notes="notes"/>
+    </section>
+`,
     data() {
         return {
             notes: null,

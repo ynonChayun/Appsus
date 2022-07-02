@@ -7,7 +7,7 @@ export default {
           <ul>
               <li v-for="book in books" :key="book.id">
                   <p>{{book.title}}  <button @click="addBook(book.id)">ADD BOOK</button></p>
-                  <book-preview :book="{book,mode:'search'}"/>
+                  <!-- <book-preview :book="{book,mode:'search'}"/> -->
               </li>
           </ul>
       </section>
@@ -23,7 +23,7 @@ export default {
     },
     computed: {},
     unmounted() {},
-    components:{
+    components: {
         bookPreview
     }
 };

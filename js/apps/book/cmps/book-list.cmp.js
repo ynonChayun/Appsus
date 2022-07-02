@@ -1,17 +1,29 @@
-import bookPreview from "./book-preview.cmp.js"
+import bookPreview from "../cmps/book-preview.cmp.js";
+
 
 export default {
-    props: ['books'],
+    props: ["books"],
     template: `
-    <section class="book-list">
-        <ul>
-            <li v-for="book in books" :key="book.id" class="book-preview-container">
-                    <router-link class="info-btn" :to="'/book/'+book.id"><book-preview :book="{book ,mode:'list'}"/></router-link>
-            </li>
-        </ul>
-    </section>
-    `,
+   <section class="book-list">
+          <ul>
+              <li v-for="(book,idx) in books" :key="book.id" class="book-preview-container">
+                  <router-link :to="'/book/'+book.id">
+                  <book-preview :book="book"/>
+                   </router-link>
+              </li>
+          </ul>
+      </section>
+  `,
     components: {
         bookPreview,
+
     },
-}
+
+    data() {
+        return {};
+    },
+    methods: {
+
+    },
+    computed: {},
+};

@@ -13,11 +13,9 @@
     height: 50px;
     display: flex;
     flex-direction: column;
-
     justify-content: center;
     align-items: center;
-
-    margin-block:.5rem ;
+    margin-block: .5rem;
 }
 
 .nav-link img {

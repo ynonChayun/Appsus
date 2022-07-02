@@ -2,7 +2,6 @@ header {
     display: flex;
     border-bottom: .5px solid #eceff1;
     padding: 21px .5rem 21px 21px;
-    
     height: 10vh;
     align-items: center;
     justify-content: space-between;
@@ -37,11 +36,12 @@ header {
     cursor: pointer;
 }
 
-.logo-and-filter{
+.logo-and-filter {
     display: flex;
     flex-grow: 10;
 }
-.menu-icon-container:hover{
+
+.menu-icon-container:hover {
     background-color: #e8eaed71;
     border-radius: 50%;
 }

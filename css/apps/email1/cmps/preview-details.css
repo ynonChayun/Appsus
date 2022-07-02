@@ -1,0 +1,128 @@
+.preview-details {
+    
+    border-inline: .5px solid #eceff1;;
+    height: 92vh;
+    font-family: roboto;
+   
+    position: relative;
+}
+
+.preview-details main{
+    padding: 1.5rem;
+    padding-inline: 5rem;
+}
+
+main .subject-details {
+    font-size: 2rem;
+    padding: 10px 10px 20px 0;
+    background-color: #fff;
+}
+
+.header-details {
+    display: flex;
+    justify-content: space-between;
+    padding-block-start: 1rem;
+    font-size: 1rem;
+}
+
+.header-details .from {
+    font-family: roboto-bold;
+}
+
+.header-details .time {
+    color: #5f6368;
+}
+
+.to .email {
+    font-size: .9rem;
+    color: #555;
+}
+
+.to .name {
+    letter-spacing: .3px;
+    color: #5f6368;
+    font-size: 1rem;
+}
+
+.to {
+    border-bottom: .5px solid #eceff1;
+    margin-bottom: .3rem;
+}
+
+.user-logo {
+    width: 33px;
+
+}
+
+.user-logo-container {
+    position: absolute;
+    left: 20px;
+    top: 6.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    background-color: #cccccc;
+    border-radius: 50%;
+    opacity: .6;
+}
+
+.preview-details .content {
+    margin: 0;
+    padding: 0;
+    padding-block: 1rem;
+    font-size: 1.2rem;
+}
+
+
+
+
+
+
+
+
+
+.preview-details-symbols>* {
+    width: 20px;
+    height: 20px;
+    opacity: .5;
+    margin-block: 1rem ;
+    margin-inline: 1.5rem;
+    cursor: pointer;
+}
+
+.preview-details-symbols>*:hover{
+    opacity: 1;
+}
+
+.preview-details-symbols {
+    border-bottom: .5px solid #eceff1;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.archive {
+    width: 2.7rem;
+    height: 2.7rem;
+    border-inline-start: 1px solid #eceff1;
+}
+
+.back {
+    width: 17px;
+    height: 17px;
+    
+}
+
+.preview-details-symbols .Trash {
+    width: 20px;
+    height: 20px;
+
+}
+
+.time-and-star{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}

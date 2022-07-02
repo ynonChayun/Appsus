@@ -61,14 +61,14 @@ export default {
                 .then(book => {
                     this.book = book;
                     this.review = bookService.getEmptyReview()
-                    eventBus.emit('show-msg', { txt: `A review on book ${this.book.id} was successfully added`, type: 'success' });
+                        // eventBus.emit('show-msg', { txt: `A review on book ${this.book.id} was successfully added`, type: 'success' });
                 })
         },
         remove(reviewId) {
             bookService.removeReview(this.book.id, reviewId)
                 .then(book => {
                     this.book = book;
-                    eventBus.emit('show-msg', { txt: `A review on book ${this.book.id} was successfully removed`, type: 'success' });
+                    // eventBus.emit('show-msg', { txt: `A review on book ${this.book.id} was successfully removed`, type: 'success' });
                 })
         }
     },

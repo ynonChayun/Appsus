@@ -1,45 +1,26 @@
-import { utilService } from './util-service.js'
+import { utilService } from './util-service.js';
 import { storageService } from './async-storage-service.js';
 
-export const bookService = {
-    query,
-    get,
-    addReview,
-    getEmptyReview,
-    removeReview,
-    getGoogleBooksTitles,
-    addGoogleBook,
-    getNextBookId,
-    getPrevBookId,
-    getSearchResults,
-    save
 
-}
+const BOOKS_KEY = 'books';
+_createBooks();
 
-const BOOKS_KEY = 'BOOKS_DB'
 const SEARCH_KEY = 'searchesDB'
 
-_createBooks()
 
 let gSearchCache = utilService.loadFromStorage(SEARCH_KEY) || {}
 
-
-
-function getNextBookId(bookId) {
-    return storageService.query(BOOKS_KEY)
-        .then(books => {
-            const idx = books.findIndex(book => book.id === bookId)
-            return (idx < books.length - 1) ? books[idx + 1].id : books[0].id
-        })
-}
-
-function getPrevBookId(bookId) {
-    return storageService.query(BOOKS_KEY)
-        .then(books => {
-            const idx = books.findIndex(book => book.id === bookId)
-            return (idx === 0) ? books[books.length - 1].id : books[idx - 1].id
-        })
-}
+export const bookService = {
+    query,
+    remove,
+    save,
+    get,
+    addReview,
+    getSearchResults,
+    getNextBookId,
+    getPrevBookId,
+    removeReview,
+};
 
 function query() {
     return storageService.query(BOOKS_KEY)
@@ -49,49 +30,19 @@ function get(bookId) {
     return storageService.get(BOOKS_KEY, bookId)
 }
 
-// Google Books
-function getGoogleBooksTitles(searchKey = '') {
-    if (!searchKey) return Promise.reject('no search key');
-
-    return _getGoogleBooks(searchKey)
-        .then(({ items: books }) => { return books.map(book => { return book.volumeInfo.title }) })
+function remove(bookId) {
+    const books = query();
+    const idx = books.findIndex(book => book.id === bookId);
+    books.splice(idx, 1);
+    utilService.saveToStorage(BOOKS_KEY, books);
 }
 
-function addGoogleBook(title) {
-    _getGoogleBooks(title).then(({ items: books }) => {
-        let { volumeInfo: book } = books[0]
-        book = _setPrice(book)
-        post(book)
+function save(book) {
+    const books = query();
+    books.then((books) => {
+        books.push(book)
+        utilService.saveToStorage(BOOKS_KEY, books);
     })
-}
-
-function _setPrice(book) {
-    book.listPrice = {}
-    book.listPrice.amount = 109
-    book.listPrice.currencyCode = "EUR"
-    book.listPrice.isOnSale = false
-    return book
-}
-
-function _getGoogleBooks(searchKey) {
-    return fetch(`https://www.googleapis.com/books/v1/volumes?printType=books&q=${searchKey}`)
-        .then(res => res.json())
-}
-
-
-
-
-function post(book) {
-    storageService.post(BOOKS_KEY, book)
-}
-
-function getEmptyReview() {
-    return {
-        rederName: '',
-        rate: '',
-        readingDate: '',
-        bookReview: ''
-    }
 }
 
 function addReview(bookId, review) {
@@ -114,7 +65,6 @@ function removeReview(bookId, reviewId) {
 }
 
 function getSearchResults(value) {
-    console.log('value: ', value)
     if (gSearchCache[value]) {
         console.log('hi from local storage')
         return Promise.resolve(gSearchCache[value])
@@ -137,16 +87,22 @@ function getSearchResults(value) {
         })
 }
 
-function save(book) {
-    const books = query();
-    books.then((books) => {
-        books.push(book)
-        utilService.saveToStorage(BOOKS_KEY, books);
-    })
+function getNextBookId(bookId) {
+    return storageService.query(BOOKS_KEY)
+        .then(books => {
+            const idx = books.findIndex(book => book.id === bookId)
+            return (idx < books.length - 1) ? books[idx + 1].id : books[0].id
+        })
 }
 
+function getPrevBookId(bookId) {
+    return storageService.query(BOOKS_KEY)
+        .then(books => {
+            const idx = books.findIndex(book => book.id === bookId)
+            return (idx === 0) ? books[books.length - 1].id : books[idx - 1].id
+        })
 
-
+}
 
 function loadRepoase(item) {
     let subtitle = item.volumeInfo.subtitle
@@ -165,9 +121,11 @@ function loadRepoase(item) {
             currencyCode: 'USD',
             isOnSale: false
         },
-        thumbnail: item.volumeInfo.imageLinks.thumbnail || item.volumeInfo.imageLinks.smallThumbnail || '/imgs/no-img.jpg',
+        thumbnail: item.volumeInfo.imageLinks.thumbnail || item.volumeInfo.imageLinks.smallThumbnail || '/img/no-img.jpg',
     }
 }
+
+
 
 
 function _createBooks() {

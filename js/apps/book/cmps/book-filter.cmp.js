@@ -1,5 +1,3 @@
-import { eventBus } from "../../email/services/eventBus-service.js"
-
 export default {
     template: `
     <div class="filter-containers ">
@@ -40,7 +38,7 @@ export default {
     data() {
 
         return {
-            isMultiFilter : false,
+            isMultiFilter: false,
             isActive: false,
             filterBy: {
                 txt: '',
@@ -52,20 +50,20 @@ export default {
     watch: {
         filterBy: {
             handler() {
-                eventBus.emit('filtered', this.filterBy)
+                this.$emit('filtered', this.filterBy)
             },
             deep: true
         }
     },
-    methods:{
+    methods: {
         clearInput() {
             this.closeMultiFilter()
             this.filterBy.txt = ''
         },
-        closeMultiFilter(){
+        closeMultiFilter() {
             this.isMultiFilter = false
         },
-        clickTxtFilter(){
+        clickTxtFilter() {
             this.isActive = !this.isActive
             this.closeMultiFilter()
         }

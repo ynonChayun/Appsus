@@ -5,16 +5,16 @@ import addBookSearchList from "../cmps/add-book-search-list.cmp.js";
 
 export default {
     template: `
-    <section class="book-add" v-if="false">
-    <header>Add Book <div class="close-compose">x</div></header>
+    <section class="book-add">
+    <header>Add Book <div class="close-compose" @click="closeModal">x</div></header>
         <div class="book-add-content">
            <add-book-search @searchNewBook="onSearchNewBook"/>
            <add-book-search-list v-if="searchedResults"
             :books="searchedResults" @bookAdded="onAddBook"/>
-</div>
+        </div>
     </section>`
-    
-    
+
+
     ,
     components: {
         addBookSearch,
@@ -32,7 +32,9 @@ export default {
     },
     methods: {
         onSearchNewBook(title) {
+            console.log('title: ', title)
             bookService.getSearchResults(title).then((results) => {
+                console.log('hi: ')
                 this.searchedResults = results
             })
 
@@ -47,7 +49,9 @@ export default {
             console.log('currBook: ', currBook)
             bookService.save(currBook)
         },
-
+        closeModal() {
+            this.$emit('closeModal')
+        }
 
     }
 }

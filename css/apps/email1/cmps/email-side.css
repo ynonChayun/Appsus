@@ -1,0 +1,159 @@
+.email-side {
+    display: flex;
+    flex-direction: column;
+    width: 255px;
+}
+
+.email-side>* {
+    font-size: .875rem;
+    font-family: roboto;
+}
+
+.email-side button {
+    display: flex;
+    align-items: center;
+
+    height: 2rem;
+
+    text-align: start;
+    letter-spacing: .2px;
+    color: #202124;
+
+    border: none;
+    padding-inline-start: 1.625rem;
+    margin-inline-end: .5rem;
+    cursor: pointer;
+    background-color: #fff;
+    position: relative;
+}
+
+.email-side button:hover {
+    background-color: #edf0f5c0;
+    border-radius: 0 20px 20px 0;
+}
+
+.email-side .btn-active {
+    background-color: #e8eaed;
+    border-radius: 0 20px 20px 0;
+    font-family: roboto-bold;
+}
+
+.email-side .count{
+    position: absolute;
+    right: 0;
+    padding-inline-end: .75rem;
+    color: #5f6368;
+}
+.email-side .Inbox-active .count{
+    color: #da362b;
+    font-family: roboto-bold;
+}
+.email-side .btn-active .count{
+    font-family: roboto-bold;
+}
+
+.email-side .Inbox-active {
+    background-color: #fce8e6;
+    color: #da362b;
+    
+    font-family: roboto-bold;
+
+    background-repeat: no-repeat;
+    border-radius: 0 20px 20px 0;
+}
+.email-side .Inbox-active:hover{
+    background-color: #fce8e6;
+}
+
+.email-side .bold{
+    font-family: roboto-bold;
+}
+
+
+.index-logo {
+    background-image: url(https://www.gstatic.com/images/icons/material/system/1x/inbox_gm_googlered600_20dp.png);
+    height: 1.25rem;
+    width: 1.25rem;
+
+    margin-inline-end: 1.125rem;
+
+    background-repeat: no-repeat;
+   
+}
+
+.compose-email {
+    display: flex;
+
+    height: 48px;
+    width: 150px;
+
+    font-size: .875rem;
+    letter-spacing: .25px;
+    color: #3c4043;
+
+    margin-block: 1rem;
+    margin-inline-start: .5rem;
+    align-items: center;
+    border-radius: 24px;
+    cursor: pointer;
+
+    font-family: prodact-sans-bold;
+
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+    transition: box-shadow .08s linear, min-width .15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.compose-email:hover {
+    box-shadow: 0 1px 3px 0 rgb(60 64 67 / 30%), 0 4px 8px 3px rgb(60 64 67 / 15%);
+    background-color: #fafafb;
+}
+
+.compose-img {
+    height: 2.875rem;
+    width: 3.625rem;
+
+    background-image: url(https://www.gstatic.com/images/icons/material/colored_icons/1x/create_32dp.png);
+    background-repeat: no-repeat;
+    background-position: 10px;
+}
+
+
+.Inbox,
+.Starred,
+.Sent,
+.Drafts,
+.Trash,
+.All {
+    height: 1.25rem;
+    width: 1.25rem;
+
+    margin-inline-end: 1.125rem;
+
+    background-repeat: no-repeat;
+    opacity: 0.54;
+}
+
+.Inbox {
+    background-image: url(https://www.gstatic.com/images/icons/material/system/1x/inbox_black_20dp.png);
+
+}
+
+.Starred {
+    background-image: url('https://www.gstatic.com/images/icons/material/system/1x/grade_black_20dp.png');
+}
+
+.Sent {
+    background-image: url(https://www.gstatic.com/images/icons/material/system/1x/send_black_20dp.png);
+}
+
+.Drafts {
+    background-image: url(https://www.gstatic.com/images/icons/material/system/1x/insert_drive_file_black_20dp.png);
+}
+
+.Trash {
+    background-image: url(https://www.gstatic.com/images/icons/material/system/1x/delete_black_20dp.png);
+}
+
+.All {
+    background-image: url(https://www.gstatic.com/images/icons/material/system/1x/mail_black_20dp.png);
+}

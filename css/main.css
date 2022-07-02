@@ -32,14 +32,12 @@
 @import './apps/keep/keep-menu.css';
 @import './apps/keep/keep-color-palette.css';
 
-/* BOOK */
-
-@import './apps/books/cmps/book-filter.css';
-@import './apps/books/cmps/book-list.css';
-@import './apps/books/cmps/add-book.css';
-@import './apps/books/cmps/add-book-modal.css';
-@import './apps/books/cmps/add-book-search.css';
 /* book */
 
+@import './apps/books/cmps/book-list.css';
+@import './apps/books/cmps/book-filter.css';
 @import './apps/book/book-details.css';
 @import './apps/book/book-review.css';
+@import './apps/book/add-book.css';
+@import './apps/book/add-book-modal.css';
+@import './apps/books/cmps/add-book-search.css';

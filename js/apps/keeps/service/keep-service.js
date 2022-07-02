@@ -91,7 +91,7 @@ function _createExampleNotes() {
                 txt: 'Hi everyone!'
             },
             style: {
-                backgroundColor: '#f28b82',
+                backgroundColor: '#b32850',
             }
         },
         {
@@ -100,67 +100,11 @@ function _createExampleNotes() {
             noteType: 'txt',
             isPinned: false,
             info: {
-                title: '',
+                title: 'Third Note',
                 img: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
             },
             style: {
-                backgroundColor: '#fbbc04',
-            }
-        },
-        {
-            id: utilsService.makeId(),
-            type: 'noteTodos',
-            noteType: 'todos',
-            isPinned: false,
-            info: {
-                title: 'Apps:',
-                todos: [
-                    { txt: 'Mail', isComplete: true, doneAt: null },
-                    { txt: 'Keep', isComplete: false, doneAt: 187111111 },
-                    { txt: 'Book', isComplete: false, doneAt: 187111 }
-                ]
-            },
-            style: {
-                backgroundColor: '#fff475'
-            }
-        },
-        {
-            id: utilsService.makeId(),
-            type: 'noteImg',
-            noteType: 'txt',
-            isPinned: false,
-            info: {
-                title: 'Awesome',
-                img: 'https://images.unsplash.com/photo-1626025437642-0b05076ca301?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=534&q=80'
-            },
-            style: {
-                backgroundColor: '#a7ffeb',
-            }
-        },
-        {
-            id: utilsService.makeId(),
-            type: 'noteImg',
-            noteType: 'txt',
-            isPinned: false,
-            info: {
-                title: '',
-                img: 'https://media1.giphy.com/media/QpVUMRUJGokfqXyfa1/200.gif'
-            },
-            style: {
-                backgroundColor: '#cbf0f8',
-            }
-        },
-        {
-            id: utilsService.makeId(),
-            type: 'noteImg',
-            noteType: 'txt',
-            isPinned: false,
-            info: {
-                title: '',
-                img: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
-            },
-            style: {
-                backgroundColor: '#d7aefb',
+                backgroundColor: '#3b8beb',
             }
         },
         {
@@ -177,20 +121,7 @@ function _createExampleNotes() {
                 ]
             },
             style: {
-                backgroundColor: '#aecbfa'
-            }
-        },
-        {
-            id: utilsService.makeId(),
-            type: 'noteImg',
-            noteType: 'txt',
-            isPinned: true,
-            info: {
-                title: 'Why?',
-                img: 'https://media.wired.com/photos/59326d5344db296121d6aee9/master/pass/8552.gif'
-            },
-            style: {
-                backgroundColor: '#e8eaed',
+                backgroundColor: '#e7e3d4'
             }
         },
         {
@@ -199,11 +130,80 @@ function _createExampleNotes() {
             noteType: 'txt',
             isPinned: false,
             info: {
-                title: 'Cool',
-                img: 'https://c.tenor.com/kqixRX0zKOcAAAAd/cool.gif'
+                title: 'Third Note',
+                img: 'https://images.unsplash.com/photo-1626025437642-0b05076ca301?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=534&q=80'
             },
             style: {
-                backgroundColor: '#aecbfa',
+                backgroundColor: '#c4dbf6',
+            }
+        },
+        {
+            id: utilsService.makeId(),
+            type: 'noteImg',
+            noteType: 'txt',
+            isPinned: false,
+            info: {
+                title: 'Third Note',
+                img: 'https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+            },
+            style: {
+                backgroundColor: '#41b3a3',
+            }
+        },
+        {
+            id: utilsService.makeId(),
+            type: 'noteImg',
+            noteType: 'txt',
+            isPinned: false,
+            info: {
+                title: 'Third Note',
+                img: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
+            },
+            style: {
+                backgroundColor: '#b32850',
+            }
+        },
+        {
+            id: utilsService.makeId(),
+            type: 'noteTodos',
+            noteType: 'todos',
+            isPinned: false,
+            info: {
+                title: 'groceries:',
+                todos: [
+                    { txt: 'milk', isComplete: true, doneAt: null },
+                    { txt: 'toothpaste', isComplete: false, doneAt: 187111111 },
+                    { txt: 'bamba', isComplete: false, doneAt: 187111 }
+                ]
+            },
+            style: {
+                backgroundColor: '#3bbeb'
+            }
+        },
+        {
+            id: utilsService.makeId(),
+            type: 'noteImg',
+            noteType: 'txt',
+            isPinned: true,
+            info: {
+                title: 'Try sOmRHIN',
+                img: 'https://images.unsplash.com/photo-1626025437642-0b05076ca301?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=534&q=80'
+            },
+            style: {
+                backgroundColor: '#8590aa',
+            }
+        },
+        {
+            id: utilsService.makeId(),
+            type: 'noteImg',
+            noteType: 'txt',
+            isPinned: false,
+            info: {
+                title: 'Third Note',
+                img: 'https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+            },
+            style: {
+                backgroundColor: '#c4dbf6',
             }
         },
 
