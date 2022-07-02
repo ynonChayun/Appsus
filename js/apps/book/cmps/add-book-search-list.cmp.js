@@ -4,10 +4,10 @@ export default {
     props: ["books"],
     template: `
     <section>
-          <ul>
-              <li v-for="book in books" :key="book.id">
-                  <p>{{book.title}}  <button @click="addBook(book.id)">ADD BOOK</button></p>
-                  <!-- <book-preview :book="{book,mode:'search'}"/> -->
+          <ul class="add-book-list">
+              <li v-for="book in books" :key="book.id" class="add-book-item">
+                  <p>{{book.title}}  </p>
+                  <button class="add-book-btn" @click="addBook(book.id)">ADD BOOK</button>
               </li>
           </ul>
       </section>

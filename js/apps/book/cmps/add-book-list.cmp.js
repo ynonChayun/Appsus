@@ -4,7 +4,7 @@ export default {
     <section>
           <ul>
               <li v-for="result in results" :key="result.id">
-                  <p>{{result.title}}  <button @click="addBook(result.id)">ADD BOOK</button></p>
+                  <p>{{result.title}} <button class="info-btn" @click="addBook(result.id)">ADD... BOOK</button></p>
               </li>
           </ul>
       </section>

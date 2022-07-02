@@ -19,12 +19,12 @@ export default {
         <div class="form-container">
         <div class="filter-by min-price">
             <span>Min Price: {{filterBy.fromPrice}}</span>
-            <input type="range"  v-model="filterBy.fromPrice" min="0" max="500">
+            <input type="range"  v-model="filterBy.fromPrice" min="0" max="200">
         </div>
 
         <div class="filter-by max-price">
-            <span>Max Price: {{filterBy.toPrice}}</span>
-            <input type="range" v-model="filterBy.toPrice" min="0" max="500">
+            <span>Min Price: {{filterBy.toPrice}}</span>
+            <input type="range" v-model="filterBy.toPrice" min="0" max="200">
         </div>
 
             <button class="search" @click="closeMultiFilter">Bach</button>
@@ -43,7 +43,7 @@ export default {
             filterBy: {
                 txt: '',
                 fromPrice: 0,
-                toPrice: Infinity
+                toPrice: 200
             },
         }
     },

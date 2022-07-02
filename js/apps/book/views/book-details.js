@@ -30,13 +30,13 @@ export default {
                             </li>
                         </ul>
                     </div>
-                    <div class="more-details">
-                    <router-link :to="'/book/' + prevBookId">Prev book</router-link>
-        <router-link :to="'/book/' + nextBookId">Next book</router-link>
-
-        <router-link class="info-btn" to="/book">back</router-link>
-                    </div>
-    
+                        <div class="page-btn">
+                            <router-link class="info-btn" :to="'/book/' + prevBookId">&laquo; Previous</router-link>
+                            <router-link class="info-btn" :to="'/book/' + nextBookId">Next &raquo;</router-link>
+                        </div>
+                        <div class="page-btn">
+                            <router-link class="info-btn" to="/book">Back to book shop</router-link>
+                        </div>
             </div>
         </div>
         <review-add />
@@ -116,132 +116,3 @@ export default {
 
     }
 }
-// export default {
-//     template: `
-//         <section v-if="book" class="book-details">
-//             <div class="book-details main-layout flex">
-//                 <div class=img-box>
-//                     <img :src="bookImgUrl" alt="">
-//                 </div>
-//                  <div class="book-txt-details">
-//                      <h2>{{ book.title }} <span class="price" :class="priceClass">{{book.listPrice.amount}}{{currencyIcon}}</span></h2>
-//                      <p class="author">By: <span>{{ authors }}</span></p>
-//                      <h4>{{ book.subtitle }}</h4>
-//                      <p>Published at: {{ book.publishedDate }} {{date}}.</p>
-//                      <long-text v-if="book.description" :text="book.description"></long-text>
-
-//                     <div class="more-details">
-//                       <div>
-//                         <span class="detial">{{book.pageCount}} pages, {{pageCount}}</span>
-//                         <br>
-//                         <span class="detial">{{book.language}}</span>
-//                       </div>
-//                       <ul >
-//                         <li v-for="category in book.categories ">
-//                           <span>{{category}}</span>
-//                         </li>
-//                       </ul>
-//                     </div>
-//                     <router-link :to="'/book/' + nextBookId">Next Book</router-link>
-//                     <router-link :to="'/book/' + previousBookId">Previous Book</router-link>
-//                     <router-link to="/book"><button>Back</button></router-link>
-//                 </div>
-
-//             </div>
-//         </section>
-//   `,
-//     components: {
-//         longText,
-//     },
-//     data() {
-//         return {
-//             book: null,
-//             Id: null,
-//             difficulty: '',
-//             bookStatus: '',
-//             isLongText: false,
-//             nextBookId: null,
-//             previousBookId: null,
-//         };
-//     },
-//     created() {
-//         const id = this.$route.params.bookId
-//         this.Id = id
-//         bookService.get(id).then(book => this.book = book)
-//     },
-//     methods: {},
-//     computed: {
-//         colorPrice() {
-//             if (this.book.listPrice.amount > 140) return 'red'
-//             else if (this.book.listPrice.amount < 20) return 'green'
-//         },
-//         currencyIcon() {
-//             var currencyCode = this.book.listPrice.currencyCode
-//             if (currencyCode === 'USD') return '$'
-//             else if (currencyCode === 'ILS') return '₪'
-//             else if (currencyCode === 'EUR') return '€'
-//         },
-//         date() {
-//             let date = this.book.publishedDate
-//             let currYear = new Date().getFullYear()
-//             let diff = currYear - date
-
-//             if (diff > 10) {
-//                 this.bookStatus = ', Veteran Book'
-//                 return this.bookStatus
-//             } else if (diff <= 1) {
-//                 this.bookStatus = ', New'
-//                 return this.bookStatus
-//             }
-//         },
-//         bookImgUrl() {
-//             return `${this.book.thumbnail}`
-//         },
-//         categories() {
-//             let categories = this.book.categories
-//             if (!categories) return 'general'
-//             return categories.join(', ')
-
-//         },
-//         authors() {
-//             let authors = this.book.authors
-//             if (!authors) return 'unknon'
-
-//             return authors.join(', ')
-
-//         },
-//         pageCount() {
-//             let readingLength = this.book.pageCount
-//             if (readingLength > 500) {
-//                 this.difficulty = 'Long Reading'
-//                 return this.difficulty
-//             } else if (readingLength > 200) {
-//                 this.difficulty = 'Decent Reading'
-//                 return this.difficulty
-//             } else if (readingLength > 200) {
-//                 this.difficulty = 'Medium Reading'
-//                 return this.difficulty
-//             } else if (readingLength < 100) {
-//                 this.difficulty = 'Light Reading'
-//                 return this.difficulty
-//             }
-//         },
-//     },
-//     watch: {
-//         '$route.params.bookId': {
-//             handler() {
-//                 const id = this.$route.params.bookId
-//                 if (!id) return
-//                 bookService.get(id).then((book) => {
-//                     this.book = book
-//                     bookService.getNextBookId(book.id)
-//                         .then(nextBookId => this.nextBookId = nextBookId)
-//                     bookService.getPrevBookId(book.id)
-//                         .then(prevBookId => this.previousBookId = prevBookId)
-//                 })
-//             },
-//             immediate: true
-//         }
-
-//     }
-// };

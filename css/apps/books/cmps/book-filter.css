@@ -41,8 +41,9 @@
     }
     
     .book-multi-filter {
-        position: absolute;
-        top: 53px;
+        position: relative;
+        top: 10px;
+        left: 25%;
         background-color: #fff;
         z-index: 1;
         width: 50%;

@@ -10,7 +10,7 @@ export default {
         </article>
         <article class="venue">
             <h3>Come visit our book shop</h3>
-            <router-link to="/" @click.native="$emit('clicked')" class="nav-link ">
+            <router-link to="/book" @click.native="$emit('clicked')" class="nav-link ">
                     <img src="imgs/book-stack.png">
             </router-link>
             <p>You will find some really interesting books.</p>
@@ -37,7 +37,7 @@ export default {
         </article>
         <article class="venue">
             <h3>Go share this fantastic website with your friends.</h3>
-            <img @click="copyLink" style="cursor: pointer" class="home-page-img" src="imgs/link.png">
+            <img title="Copy link" @click="copyLink" style="cursor: pointer" class="home-page-img" src="imgs/link.png">
         </article>
         <article class="venue">
             <h3>You made it all the way down here, right?</h3>
